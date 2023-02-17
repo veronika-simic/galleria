@@ -27,6 +27,7 @@ This is an online gallery project made with React
 
 - React - version 18.2.0
 - VITE - version 4.1.1
+- MUI - version 5.11.9
 
 ## Features
 
@@ -50,7 +51,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 Start the project by running the following command from the root
 
-`npm start`
+`npm run dev`
 
 ## Project Status
 
