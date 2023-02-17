@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <Box>
       <Masonry
-        columns={{ xs: 1, sm: 1, md: 2, lg: 4}}
+        columns={{ xs: 1, sm: 2, md: 2, lg: 4}}
         spacing={{ xs: 2 }}
       >
         {data.map((data: string) => (
