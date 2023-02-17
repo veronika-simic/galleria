@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getData } from '../api/axios';
 export default function HomePage() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
     const getAllDataFromApi = async() => {
