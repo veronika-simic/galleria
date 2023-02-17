@@ -1,26 +1,28 @@
 import axios from 'axios';
 
-export function getDataById(id: number) {
-  axios
-    .get('https://www.rijksmuseum.nl/api/en/collection/{id}?key=4qJ0emUy')
-    .then(function (response) {
-      console.log(response.data.artObject.webImage.url);
-      console.log(response.data.artObject);
-    })
-    .catch(function (error) {
-      console.log('error', error);
-    });
+export async function getDataById(id: number) {
+  try {
+    const response = await axios.get(
+      'https://www.rijksmuseum.nl/api/en/collection/{id}?key=4qJ0emUy'
+    );
+    console.log(response.data.artObject.webImage.url);
+    console.log(response.data.artObject);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-export function getData() {
-  axios
-    .get('https://www.rijksmuseum.nl/api/en/collection?key=4qJ0emUy&ps=100')
-    .then(function (response) {
-      for (let i = 1; i < response.data.artObjects.length; i += 2) {
-        console.log(response.data.artObjects[i].webImage.url);
-      }
-    })
-    .catch(function (error) {
-      console.log('error', error);
-    });
+export async function getData() {
+  try {
+    const response = await axios.get(
+      'https://www.rijksmuseum.nl/api/en/collection?key=4qJ0emUy&ps=100'
+    );
+    for (let i = 1; i < response.data.artObjects.length; i += 2) {
+      console.log(response.data.artObjects[i].webImage.url);
+      return response.data.artObjects[i].webImage.url;
+    }
+  } catch (err) {
+    console.log(err);
+  }
 }
