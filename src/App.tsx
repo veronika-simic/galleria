@@ -1,10 +1,10 @@
 import HomePage from './components/HomePage/Home';
-import { useState } from 'react';
+import { SkeletonTheme } from 'react-loading-skeleton';
 function App() {
   return (
-    <div>
+    <SkeletonTheme baseColor="#B2B2B2" highlightColor="#EAEAEA">
       <HomePage />
-    </div>
+    </SkeletonTheme>
   );
 }
 

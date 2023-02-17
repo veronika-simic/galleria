@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { getData } from '../api/axios';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import Typography from '@mui/material/Typography';
 export default function HomePage() {
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
