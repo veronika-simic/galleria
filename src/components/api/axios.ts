@@ -24,5 +24,3 @@ function getImages() {
       console.log('error', error);
     });
 }
-
-getImages();
