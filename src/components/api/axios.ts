@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-function getImage() {
+export function getDataById(id: number) {
   axios
-    .get('https://www.rijksmuseum.nl/api/en/collection/SK-C-5?key=4qJ0emUy')
+    .get('https://www.rijksmuseum.nl/api/en/collection/{id}?key=4qJ0emUy')
     .then(function (response) {
       console.log(response.data.artObject.webImage.url);
       console.log(response.data.artObject);
@@ -12,7 +12,7 @@ function getImage() {
     });
 }
 
-function getImages() {
+export function getData() {
   axios
     .get('https://www.rijksmuseum.nl/api/en/collection?key=4qJ0emUy&ps=100')
     .then(function (response) {
