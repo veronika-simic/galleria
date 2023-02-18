@@ -2,8 +2,9 @@ import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import { useState, useEffect } from 'react';
 import { getData } from '../api/axios';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import SingleImage from '../SingleImage/Image';
 export default function HomePage() {
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ export default function HomePage() {
         {loading ? (
           <Skeleton />
         ) : (
-          data.map((data: string) => <img key={data} src={data} />)
+          data.map((data: string) => <SingleImage key={data} data={data} />)
         )}
       </Masonry>
     </Box>
