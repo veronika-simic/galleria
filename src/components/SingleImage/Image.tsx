@@ -1,3 +1,5 @@
-export default function SingleImage(props: { data: string }) {
-  return <img src={props.data} alt="image" loading="lazy" />;
+import { ArtifactModel } from '../../models/Artifacts';
+
+export default function SingleImage(props: { data: ArtifactModel }) {
+  return <img src={props.data.webImage.url} alt={props.data.longTitle} loading="lazy" />;
 }

@@ -5,6 +5,7 @@ import { getData } from '../api/axios';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import SingleImage from '../SingleImage/Image';
+import { ArtifactModel } from '../../models/Artifacts';
 export default function HomePage() {
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ export default function HomePage() {
         {loading ? (
           <Skeleton />
         ) : (
-          data.map((data: string) => <SingleImage key={data} data={data} />)
+          data.map((data: ArtifactModel) => <SingleImage key={data.objectNumber} data={data} />)
         )}
       </Masonry>
     </Box>
