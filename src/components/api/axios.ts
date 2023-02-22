@@ -19,11 +19,11 @@ export async function getData() {
       'https://www.rijksmuseum.nl/api/en/collection?key=4qJ0emUy&ps=100'
     );
     const allData = [];
-    for (let i = 1; i < response.data.artObjects.length; i += 2) {
-      allData.push(response.data.artObjects[i].webImage.url);
+    for (let i = 0; i < response.data.artObjects.length; i += 1) {
+      allData.push(response.data.artObjects[i]);
     }
     return allData;
   } catch (err) {
-    console.log(err);
+    return err;
   }
 }
