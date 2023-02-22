@@ -22,7 +22,9 @@ export default function NavigationBar() {
         >
           galleria.
         </Link>
-        <Typography color="grey">START SLIDESHOW</Typography>
+        <Typography color="grey" variant="subtitle1">
+          START SLIDESHOW
+        </Typography>
       </Box>
       <Divider />
     </Box>
