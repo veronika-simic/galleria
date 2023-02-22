@@ -1,4 +1,4 @@
-import { Divider, Typography } from '@mui/material';
+import { Divider, Typography, Link } from '@mui/material';
 import Box from '@mui/material/Box';
 
 export default function NavigationBar() {
@@ -12,9 +12,16 @@ export default function NavigationBar() {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h2" sx={{ fontFamily: 'Abril Fatface' }}>
+        <Link
+          href="#"
+          aria-label="Go to home page"
+          variant="h2"
+          sx={{ fontFamily: 'Abril Fatface' }}
+          underline="none"
+          color="inherit"
+        >
           galleria.
-        </Typography>
+        </Link>
         <Typography color="grey">START SLIDESHOW</Typography>
       </Box>
       <Divider />
