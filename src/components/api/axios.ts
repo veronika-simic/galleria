@@ -18,11 +18,10 @@ export async function getData() {
     const response = await axios.get(
       'https://www.rijksmuseum.nl/api/en/collection?key=4qJ0emUy&ps=100'
     );
-    const allData = []
+    const allData = [];
     for (let i = 1; i < response.data.artObjects.length; i += 2) {
       allData.push(response.data.artObjects[i].webImage.url);
     }
-    console.log(allData)
     return allData;
   } catch (err) {
     console.log(err);
