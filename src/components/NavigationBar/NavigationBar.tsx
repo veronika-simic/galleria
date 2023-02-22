@@ -15,7 +15,7 @@ export default function NavigationBar() {
         <Typography variant="h2" sx={{ fontFamily: 'Abril Fatface' }}>
           galleria.
         </Typography>
-        <Typography>START SLIDESHOW</Typography>
+        <Typography color="grey">START SLIDESHOW</Typography>
       </Box>
       <Divider />
     </Box>
