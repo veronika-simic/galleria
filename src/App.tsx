@@ -1,3 +1,4 @@
+import Container from '@mui/material/Container';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 
 function App() {
