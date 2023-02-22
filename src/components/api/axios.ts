@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function getDataById(id: number) {
+export async function getDataById(id:number) {
   try {
     const response = await axios.get(
       'https://www.rijksmuseum.nl/api/en/collection/{id}?key=4qJ0emUy'
