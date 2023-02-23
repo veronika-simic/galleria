@@ -1,10 +1,12 @@
-import HomePage from './components/HomePage/Home';
-import { SkeletonTheme } from 'react-loading-skeleton';
+import NavigationBar from './components/NavigationBar/NavigationBar';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
+
 function App() {
   return (
-    <SkeletonTheme baseColor="#B2B2B2" highlightColor="#EAEAEA">
-      <HomePage />
-    </SkeletonTheme>
+    <ThemeProvider theme={theme}>
+      <NavigationBar />
+    </ThemeProvider>
   );
 }
 
