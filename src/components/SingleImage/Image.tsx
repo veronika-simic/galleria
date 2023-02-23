@@ -18,13 +18,13 @@ export default function SingleImage(props: { data: ArtifactModel }) {
             bottom: '15%',
             left: '15%',
             width: '100%',
-            color: 'white',
+            color: 'whitesmoke',
           }}
         >
-          <Typography variant="h5" fontFamily={'Crimson Text'} color={'whitesmoke'}>
+          <Typography variant="h4" fontFamily={'Crimson Text'} fontWeight={'bold'} letterSpacing={1.5}>
             {props.data.title}
           </Typography>
-          <Typography variant="h6" color={'whitesmoke'}>
+          <Typography variant="h6" fontFamily={'Crimson Text'}>
             {props.data.principalOrFirstMaker}
           </Typography>
         </Box>

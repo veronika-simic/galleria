@@ -20,7 +20,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <Box sx={{ overflowY: 'hidden' }}>
+    <Box sx={{ overflowY: 'hidden', margin: '2rem auto 0', width: '95%' }}>
       <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }} spacing={{ xs: 2 }}>
         {loading ? (
           <Skeleton />
