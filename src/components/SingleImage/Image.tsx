@@ -22,7 +22,7 @@ export default function SingleImage(props: { data: ArtifactModel }) {
             color: 'whitesmoke',
           }}
         >
-          <Typography variant="h4" fontFamily={'Crimson Text'} fontWeight={'bold'} letterSpacing={1.5}>
+          <Typography variant="h5" fontFamily={'Crimson Text'} fontWeight={'bold'} letterSpacing={1.5}>
             {props.data.title}
           </Typography>
           <Typography variant="h6" fontFamily={'Crimson Text'}>
