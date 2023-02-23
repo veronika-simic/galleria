@@ -24,7 +24,7 @@ export default function HomePage() {
         width: '95%',
       }}
     >
-      <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }} spacing={{ xs: 2 }}>
+      <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }} spacing={{ xs: 2 }} sx={{height: 'auto'}}>
         {data.map((data: ArtifactModel) => (
           <SingleImage key={data.objectNumber} data={data} />
         ))}
