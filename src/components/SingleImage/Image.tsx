@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 export default function SingleImage(props: { data: ArtifactModel }) {
   return (
     <Card>
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'relative'}}>
         <CardMedia
           component="img"
           image={props.data.webImage.url}
@@ -15,9 +15,9 @@ export default function SingleImage(props: { data: ArtifactModel }) {
         <Box
           sx={{
             position: 'absolute',
-            bottom: '15%',
-            left: '15%',
-            width: '100%',
+            bottom: '5%',
+            left: '5%',
+            width: '80%',
             color: 'whitesmoke',
           }}
         >
