@@ -4,7 +4,9 @@ import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
-export default function SingleImage(props: { data: ArtifactModel }) {
+import ImageFile from './ImageFile';
+import ImageCaption from './ImageCaption';
+export default function Artifact(props: { data: ArtifactModel }) {
   const [onHover, setOnHover] = useState({ raised: false, shadow: 1 });
 
   return (
@@ -14,11 +16,7 @@ export default function SingleImage(props: { data: ArtifactModel }) {
       raised={onHover.raised}
     >
       <Box sx={{ position: 'relative' }}>
-        <CardMedia
-          component="img"
-          image={props.data.webImage.url}
-          alt={props.data.longTitle}
-        />
+        <ImageFile data={props.data} />
         <Box
           sx={{
             position: 'absolute',
@@ -34,7 +32,8 @@ export default function SingleImage(props: { data: ArtifactModel }) {
             fontWeight={'bold'}
             letterSpacing={1.5}
           >
-            {props.data.title}
+           {/*  {props.data.title} */}
+           <ImageCaption data={props.data}/>
           </Typography>
           <Typography variant="h6" fontFamily={'Crimson Text'}>
             {props.data.principalOrFirstMaker}

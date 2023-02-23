@@ -1,5 +1,10 @@
-import SingleImage from '../SingleImage/Image';
+import SingleImage from '../SingleImage/Artifact';
+import ImageCaption from '../SingleImage/ImageCaption';
+import ImageFile from '../SingleImage/ImageFile';
 
 export default function InnerPage() {
-  return <h1>Hello From Inner Page</h1>;
+  return (
+   /*  <ImageFile/>
+    <ImageCaption/> */
+  )
 }
