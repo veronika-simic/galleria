@@ -1,7 +1,7 @@
 import { Image } from './Image';
 
 export interface ArtifactModel {
-  objectNumber: number;
+  objectNumber: string;
   title: string;
   principalOrFirstMaker: string;
   longTitle: string;
