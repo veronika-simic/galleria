@@ -6,7 +6,7 @@ export default function NavigationBar() {
     <Box sx={{ width: '95%', margin: '0 auto' }}>
       <Box
         sx={{
-          m: '1.5rem',
+          m: { xs: 0, sm: '1.5rem' },
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -22,7 +22,11 @@ export default function NavigationBar() {
         >
           galleria.
         </Link>
-        <Typography color="grey" variant="subtitle1">
+        <Typography
+          color="grey"
+          variant="subtitle1"
+          sx={{ ml: { xs: '1rem', sm: 0 } }}
+        >
           START SLIDESHOW
         </Typography>
       </Box>
