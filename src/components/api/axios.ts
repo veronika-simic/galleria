@@ -1,15 +1,13 @@
 import axios from 'axios';
 
-export async function getDataById(id:number) {
+export async function getDataById(id: string) {
   try {
     const response = await axios.get(
-      'https://www.rijksmuseum.nl/api/en/collection/{id}?key=4qJ0emUy'
+      'https://www.rijksmuseum.nl/api/en/collection/:id?key=4qJ0emUy'
     );
-    console.log(response.data.artObject.webImage.url);
-    console.log(response.data.artObject);
     return response;
   } catch (err) {
-    console.log(err);
+    return err;
   }
 }
 
