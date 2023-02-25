@@ -1,8 +1,6 @@
 import { ArtifactModel } from '../../models/Artifacts';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import ImageFile from './ImageFile';
 import ImageCaption from './ImageCaption';
@@ -26,18 +24,10 @@ export default function Artifact(props: { data: ArtifactModel }) {
             color: 'whitesmoke',
           }}
         >
-          <Typography
-            variant="h5"
-            fontFamily={'Crimson Text'}
-            fontWeight={'bold'}
-            letterSpacing={1.5}
-          >
-           {/*  {props.data.title} */}
-           <ImageCaption data={props.data}/>
-          </Typography>
-          <Typography variant="h6" fontFamily={'Crimson Text'}>
-            {props.data.principalOrFirstMaker}
-          </Typography>
+          <ImageCaption
+            title={props.data.title}
+            author={props.data.principalOrFirstMaker}
+          />
         </Box>
       </Box>
     </Card>
