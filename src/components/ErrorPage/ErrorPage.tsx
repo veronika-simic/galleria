@@ -1,4 +1,6 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
+
+import { Link } from 'react-router-dom';
 
 export default function ErrorPage() {
   return (
@@ -6,18 +8,42 @@ export default function ErrorPage() {
       sx={{
         overflow: 'hidden',
         position: 'absolute',
-        width: '100%',
-        height: '100%',
+        width: '95%',
+        height: '95%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'column',
+        rowGap: '2rem',
       }}
     >
-      <Typography>OOOOOPS !</Typography>
-      <Typography>
-        Sorry for the inconvenience. The responsible person will be fired.
+      <Typography variant="h2" color={'#683183'}>
+        OOOOOOOOPS !
       </Typography>
-      <Typography>(thanks to you)</Typography>
+      <Typography variant="h6">
+        <span style={{ marginLeft: '3.5rem' }}>We don't have this page.</span>
+        <span style={{ display: 'block' }}>
+          The responsible person will be fired.
+        </span>
+      </Typography>
+
+      <Typography variant="subtitle2">thanks to you</Typography>
+      <Button
+        component={Link}
+        to="/"
+        variant="contained"
+        size="large"
+        sx={{
+          backgroundColor: '#683183',
+          marginTop: '1rem',
+          fontSize: '1.5rem',
+          '&:hover': {
+            backgroundColor: '#472183',
+          },
+        }}
+      >
+        BACK TO MAIN PAGE
+      </Button>
     </Box>
   );
 }
