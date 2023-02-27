@@ -9,30 +9,30 @@ export default function Artifact(props: { data: ArtifactModel }) {
   const [onHover, setOnHover] = useState({ raised: false, shadow: 1 });
 
   return (
-    <Link to={`artifact/` + props.data.objectNumber}>
-      <Card
-        onMouseOver={() => setOnHover({ raised: true, shadow: 10 })}
-        onMouseLeave={() => setOnHover({ raised: false, shadow: 1 })}
-        raised={onHover.raised}
-      >
-        <Box sx={{ position: 'relative' }}>
-          <ImageFile data={props.data} />
-          <Box
-            sx={{
-              position: 'absolute',
-              bottom: '5%',
-              left: '5%',
-              width: '80%',
-              color: 'whitesmoke',
-            }}
-          >
-            <ImageCaption
-              title={props.data.title}
-              author={props.data.principalOrFirstMaker}
-            />
-          </Box>
+    <Link to={`artifacts/` + props.data.objectNumber}>
+    <Card
+      onMouseOver={() => setOnHover({ raised: true, shadow: 10 })}
+      onMouseLeave={() => setOnHover({ raised: false, shadow: 1 })}
+      raised={onHover.raised}
+    >
+      <Box sx={{ position: 'relative' }}>
+        <ImageFile data={props.data} />
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: '5%',
+            left: '5%',
+            width: '80%',
+            color: 'whitesmoke',
+          }}
+        >
+          <ImageCaption
+            title={props.data.title}
+            author={props.data.principalOrFirstMaker}
+          />
         </Box>
-      </Card>
+      </Box>
+    </Card>
     </Link>
   );
 }
