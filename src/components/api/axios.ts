@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export async function getDataById(id: string) {
+export async function getDataById(id: string | undefined){
   try {
     const response = await axios.get(
-      'https://www.rijksmuseum.nl/api/en/collection/:id?key=4qJ0emUy'
+      `https://www.rijksmuseum.nl/api/en/collection/${id}?key=4qJ0emUy`
     );
-    return response;
+    return response.data.artObject;
   } catch (err) {
     return err;
   }
@@ -25,3 +25,5 @@ export async function getData() {
     return err;
   }
 }
+
+
