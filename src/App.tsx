@@ -11,12 +11,15 @@ import HomePage from './components/HomePage/Home';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import InnerPage from './components/InnerPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import WithNav from './routes/WithNav';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/artifacts/:artifactId" element={<InnerPage />} />
+      <Route element={<WithNav />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/artifacts/:artifactId" element={<InnerPage />} />
+      </Route>
       <Route path="*" element={<ErrorPage />} />
     </>
   )
