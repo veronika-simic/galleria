@@ -5,7 +5,7 @@ export async function getDataById(id: string | undefined){
     const response = await axios.get(
       `https://www.rijksmuseum.nl/api/en/collection/${id}?key=4qJ0emUy`
     );
-    return response;
+    return response.data.artObject;
   } catch (err) {
     return err;
   }
