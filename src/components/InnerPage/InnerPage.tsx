@@ -28,7 +28,6 @@ export default function InnerPage() {
           display: 'flex',
           position: 'relative',
           width: '50%',
-          border: '1px solid red',
         }}
       >
         <Card
@@ -62,7 +61,13 @@ export default function InnerPage() {
         </Box>
       </Box>
 
-      <Box sx={{ width: '50%', textAlign: 'center', border: '1px solid red', position: 'relative' }}>
+      <Box
+        sx={{
+          width: '50%',
+          textAlign: 'left',
+          position: 'relative',
+        }}
+      >
         <Typography
           variant="subtitle2"
           fontSize={'14rem'}
@@ -70,11 +75,20 @@ export default function InnerPage() {
           color={'#EEEEEE'}
           zIndex={-10}
           position="absolute"
-          right={'5rem'}
+          right={'10rem'}
         >
           {artifactData.dating?.sortingDate}
         </Typography>
-        <Typography>
+        <Typography
+          fontFamily={'Noto Serif'}
+          color={'#B2B2B2'}
+          width={'45%'}
+          margin="auto"
+          position="absolute"
+          top={'15rem'}
+          left={0}
+          right={0}
+        >
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
