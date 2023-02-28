@@ -50,6 +50,8 @@ export default function InnerPage() {
               color: 'white',
               padding: '0.8rem 1.75rem',
               position: 'absolute',
+              bottom: '1rem',
+              left: '1rem'
             }}
           >
             VIEW IMAGE
