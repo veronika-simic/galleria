@@ -2,11 +2,14 @@ import { getDataById } from '../api/axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import { Card, CardMedia, Typography } from '@mui/material';
+import { Button, Card, CardMedia, Modal, Typography } from '@mui/material';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
   const [artifactData, setArtifactData] = useState<any>([]);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   useEffect(() => {
     const getArtifactData = async () => {
       const response = await getDataById(artifactId);
@@ -19,7 +22,7 @@ export default function InnerPage() {
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
-        margin: '2rem auto 0',
+        margin: '3rem auto 0',
         width: '95%',
       }}
     >
@@ -35,7 +38,36 @@ export default function InnerPage() {
             maxWidth: '70%',
           }}
         >
-          <CardMedia src={artifactData?.webImage?.url} component="img" />
+          <CardMedia
+            src={artifactData?.webImage?.url}
+            component="img"
+            sx={{ position: 'relative' }}
+          />
+          <Button
+            onClick={handleOpen}
+            sx={{
+              backgroundColor: 'black',
+              color: 'white',
+              padding: '0.8rem 1.75rem',
+              position: 'absolute',
+            }}
+          >
+            VIEW IMAGE
+          </Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box>
+              <CardMedia
+                src={artifactData?.webImage?.url}
+                component="img"
+                sx={{ width: '50%' }}
+              />
+            </Box>
+          </Modal>
         </Card>
         <Box
           sx={{
@@ -81,7 +113,7 @@ export default function InnerPage() {
         </Typography>
         <Typography
           fontFamily={'Noto Serif'}
-          color={'#B2B2B2'}
+          color={'#7F8487'}
           width={'45%'}
           margin="auto"
           position="absolute"
