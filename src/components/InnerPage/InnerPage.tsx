@@ -2,6 +2,7 @@ import { getDataById } from '../api/axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { ArtifactData } from '../../models/ArtifactData';
+import CardMedia from '@mui/material/CardMedia';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
@@ -13,7 +14,12 @@ export default function InnerPage() {
     };
     getArtifactData();
   }, []);
-  return <>
-    <h1>{artifactData.id}</h1>
-  </>;
+  return (
+    <>
+      <h1>{artifactData.title}</h1>
+      <h1>{artifactData.principalMaker}</h1>
+      <img src={artifactData.webImage.url} />
+    
+    </>
+  );
 }
