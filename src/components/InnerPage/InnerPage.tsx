@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import { Button, Card, CardMedia, Modal, Typography } from '@mui/material';
+import OpenWithIcon from '@mui/icons-material/OpenWith';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
@@ -48,12 +49,13 @@ export default function InnerPage() {
             sx={{
               backgroundColor: 'black',
               color: 'white',
-              padding: '0.8rem 1.75rem',
+              padding: '0.8rem 1.5rem',
               position: 'absolute',
               bottom: '1rem',
-              left: '1rem'
+              left: '1rem',
             }}
           >
+            <OpenWithIcon sx={{marginRight: '0.5rem'}}/>
             VIEW IMAGE
           </Button>
           <Modal
