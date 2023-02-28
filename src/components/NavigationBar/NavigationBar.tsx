@@ -13,7 +13,7 @@ export default function NavigationBar() {
         }}
       >
         <Link
-          href="#"
+          href="/"
           aria-label="Go to home page"
           variant="h2"
           sx={{ fontFamily: 'Abril Fatface' }}
