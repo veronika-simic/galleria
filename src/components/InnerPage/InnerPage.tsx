@@ -70,7 +70,7 @@ export default function InnerPage() {
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
-                sx={{ width: '50%' }}
+                sx={{ width: '50%', left: 0, top: 0, right: 0, bottom: 0, margin: 'auto'}}
               />
             </Box>
           </Modal>
