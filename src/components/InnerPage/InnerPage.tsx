@@ -16,9 +16,20 @@ export default function InnerPage() {
   }, []);
   return (
     <Box
-      sx={{ display: 'flex', justifyContent: 'space-between', width: '95%' }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '2rem auto 0',
+        width: '95%',
+      }}
     >
-      <Box sx={{ width: '50%', border: '1px solid red', display: 'flex' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          position: 'relative',
+          width: '50%',
+        }}
+      >
         <Card
           sx={{
             maxWidth: '70%',
@@ -26,13 +37,32 @@ export default function InnerPage() {
         >
           <CardMedia src={artifactData?.webImage?.url} component="img" />
         </Card>
-        <Box>
-          <Typography>{artifactData.title}</Typography>
-          <Typography>{artifactData.principalMaker}</Typography>
+        <Box
+          sx={{
+            alignItems: 'center',
+            backgroundColor: 'white',
+            display: 'flex',
+            height: '40%',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            position: 'absolute',
+            right: 0,
+            rowGap: '1rem',
+            width: '40%',
+            zIndex: 100,
+          }}
+        >
+          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={700}>
+            {artifactData.title}
+          </Typography>
+          <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
+            {artifactData.principalMaker}
+          </Typography>
         </Box>
       </Box>
 
-      <Box sx={{ width: '50%', border: '1px solid red' }}>
+      <Box sx={{ width: '50%', textAlign: 'center' }}>
+        <h1>{artifactData.dating?.sortingDate}</h1>
         <h1>description</h1>
       </Box>
     </Box>
