@@ -48,11 +48,13 @@ export default function InnerPage() {
             onClick={handleOpen}
             sx={{
               backgroundColor: 'black',
+              bottom: '1rem',
               color: 'white',
+              left: '1rem',
               padding: '0.8rem 1.5rem',
               position: 'absolute',
-              bottom: '1rem',
-              left: '1rem',
+              opacity: '0.8'
+              
             }}
           >
             <OpenWithIcon sx={{marginRight: '0.5rem'}}/>
