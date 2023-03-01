@@ -1,5 +1,5 @@
 import { getDataById } from '../api/axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import { Button, Card, CardMedia, Modal, Typography } from '@mui/material';
@@ -23,6 +23,7 @@ export default function InnerPage() {
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
+        height: '80vh',
         margin: '3rem auto 0',
         width: '95%',
       }}
@@ -36,13 +37,15 @@ export default function InnerPage() {
       >
         <Card
           sx={{
-            maxWidth: '70%',
+            display: 'flex',
+            border: 'none',
+            boxShadow: 'none',
           }}
         >
           <CardMedia
             src={artifactData?.webImage?.url}
             component="img"
-            sx={{ position: 'relative' }}
+            sx={{ position: 'relative', objectFit: 'contain' }}
           />
           <Button
             onClick={handleOpen}
@@ -53,11 +56,13 @@ export default function InnerPage() {
               left: '1rem',
               padding: '0.8rem 1.5rem',
               position: 'absolute',
-              opacity: '0.8'
-              
+              opacity: '0.7',
+              '&.MuiButtonBase-root:hover': {
+                background: 'black',
+              },
             }}
           >
-            <OpenWithIcon sx={{marginRight: '0.5rem'}}/>
+            <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
             VIEW IMAGE
           </Button>
           <Modal
@@ -66,23 +71,50 @@ export default function InnerPage() {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box>
+            <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
-                sx={{ width: '50%', left: 0, top: 0, right: 0, bottom: 0, margin: 'auto'}}
+                sx={{
+                  height: '100vh',
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  margin: 'auto',
+                  objectFit: 'contain',
+                  zIndex: 100,
+                }}
               />
+              <Button
+                onClick={handleClose}
+                sx={{
+                  color: 'white',
+                  fontSize: '1rem',
+                  opacity: 0.8,
+                  position: 'absolute',
+                  top: '1rem',
+                  right: '2rem',
+                  '&.MuiButtonBase-root:hover': {
+                    background: 'black',
+                  },
+                }}
+              >
+                CLOSE
+              </Button>
             </Box>
           </Modal>
         </Card>
         <Box
           sx={{
-            alignItems: 'center',
+            alignItems: 'left',
             backgroundColor: 'white',
+            color: '#010203',
             display: 'flex',
             height: '40%',
             flexDirection: 'column',
             justifyContent: 'center',
+            paddingLeft: '1rem',
             position: 'absolute',
             right: 0,
             rowGap: '1rem',
@@ -90,7 +122,7 @@ export default function InnerPage() {
             zIndex: 100,
           }}
         >
-          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={700}>
+          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={600}>
             {artifactData.title}
           </Typography>
           <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
@@ -137,6 +169,23 @@ export default function InnerPage() {
           quia non numquam eius modi tempora incidunt ut labore et dolore magnam
           aliquam quaerat voluptatem.
         </Typography>
+        <Link
+          to={
+            'https://www.rijksmuseum.nl/en/rijksstudio?ii=0&p=0&from=2023-02-28T08%3A49%3A26.6408842Z'
+          }
+          target="_blank"
+          style={{
+            position: 'absolute',
+            bottom: '8rem',
+            left: 0,
+            right: 0,
+            margin: 'auto',
+            width: '45%',
+            color: '#B2B2B2',
+          }}
+        >
+          GO TO SOURCE
+        </Link>
       </Box>
     </Box>
   );
