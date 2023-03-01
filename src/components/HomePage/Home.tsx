@@ -22,12 +22,13 @@ export default function HomePage() {
       sx={{
         margin: '2rem auto 0',
         width: '95%',
+        overflow: 'hidden'
       }}
     >
       <Masonry
         columns={{ xs: 1, sm: 2, md: 2, lg: 4 }}
-        spacing={{ xs: 2 }}
-        sx={{ height: 'auto' }}
+        spacing={{ xs: 2}}
+        sx={{ height: 'auto', width: 'auto' }}
       >
         {data.map((data: ArtifactModel) => (
           <Artifact key={data.objectNumber} data={data} />
