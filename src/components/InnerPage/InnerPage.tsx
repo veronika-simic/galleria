@@ -122,7 +122,7 @@ export default function InnerPage() {
             zIndex: 100,
           }}
         >
-          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={600}>
+          <Typography variant="h4" fontFamily={'Noto Serif'} fontWeight={600}>
             {artifactData.title}
           </Typography>
           <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
