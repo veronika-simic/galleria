@@ -104,12 +104,14 @@ export default function InnerPage() {
         </Card>
         <Box
           sx={{
-            alignItems: 'center',
+            alignItems: 'left',
             backgroundColor: 'white',
+            color: '#010203',
             display: 'flex',
             height: '40%',
             flexDirection: 'column',
             justifyContent: 'center',
+            paddingLeft: '1rem',
             position: 'absolute',
             right: 0,
             rowGap: '1rem',
@@ -117,7 +119,7 @@ export default function InnerPage() {
             zIndex: 100,
           }}
         >
-          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={700}>
+          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={600}>
             {artifactData.title}
           </Typography>
           <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
