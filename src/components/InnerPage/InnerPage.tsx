@@ -2,8 +2,7 @@ import { getDataById } from '../api/axios';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import { Button, Card, CardMedia, Modal, Typography } from '@mui/material';
-import OpenWithIcon from '@mui/icons-material/OpenWith';
+import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
@@ -28,98 +27,31 @@ export default function InnerPage() {
         width: '95%',
       }}
     >
-      <Box
+      <Card
         sx={{
           display: 'flex',
+          border: 'none',
+          boxShadow: 'none',
           position: 'relative',
           width: '50%',
         }}
       >
-        <Card
+        <CardMedia
+          src={artifactData?.webImage?.url}
+          component="img"
+          sx={{ objectFit: 'contain' }}
+        />
+        <CardContent
           sx={{
-            display: 'flex',
-            border: 'none',
-            boxShadow: 'none',
-          }}
-        >
-          <CardMedia
-            src={artifactData?.webImage?.url}
-            component="img"
-            sx={{ position: 'relative', objectFit: 'contain' }}
-          />
-          <Button
-            onClick={handleOpen}
-            sx={{
-              backgroundColor: 'black',
-              bottom: '1rem',
-              color: 'white',
-              left: '1rem',
-              padding: '0.8rem 1.5rem',
-              position: 'absolute',
-              opacity: '0.7',
-              '&.MuiButtonBase-root:hover': {
-                background: 'black',
-              },
-            }}
-          >
-            <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
-            VIEW IMAGE
-          </Button>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
-              <CardMedia
-                src={artifactData?.webImage?.url}
-                component="img"
-                sx={{
-                  height: '100vh',
-                  left: 0,
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  margin: 'auto',
-                  objectFit: 'contain',
-                  zIndex: 100,
-                }}
-              />
-              <Button
-                onClick={handleClose}
-                sx={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  opacity: 0.8,
-                  position: 'absolute',
-                  top: '1rem',
-                  right: '2rem',
-                  '&.MuiButtonBase-root:hover': {
-                    background: 'black',
-                  },
-                }}
-              >
-                CLOSE
-              </Button>
-            </Box>
-          </Modal>
-        </Card>
-        <Box
-          sx={{
-            alignItems: 'left',
             backgroundColor: 'white',
-            color: '#010203',
             display: 'flex',
-            height: '40%',
             flexDirection: 'column',
+            alignItems: 'left',
             justifyContent: 'center',
-            paddingLeft: '1rem',
+            height: '25%',
             position: 'absolute',
             right: 0,
-            rowGap: '1rem',
-            width: '40%',
-            zIndex: 100,
+            rowGap: '1rem'
           }}
         >
           <Typography variant="h4" fontFamily={'Noto Serif'} fontWeight={600}>
@@ -128,9 +60,8 @@ export default function InnerPage() {
           <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
             {artifactData.principalMaker}
           </Typography>
-        </Box>
-      </Box>
-
+        </CardContent>
+      </Card>
       <Box
         sx={{
           width: '50%',
