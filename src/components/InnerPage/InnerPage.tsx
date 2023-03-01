@@ -53,7 +53,10 @@ export default function InnerPage() {
               left: '1rem',
               padding: '0.8rem 1.5rem',
               position: 'absolute',
-              opacity: '0.8',
+              opacity: '0.7',
+              '&.MuiButtonBase-root:hover': {
+                background: 'black',
+              },
             }}
           >
             <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
@@ -147,7 +150,7 @@ export default function InnerPage() {
           to={
             'https://www.rijksmuseum.nl/en/rijksstudio?ii=0&p=0&from=2023-02-28T08%3A49%3A26.6408842Z'
           }
-          target='_blank'
+          target="_blank"
           style={{
             position: 'absolute',
             bottom: '15rem',
