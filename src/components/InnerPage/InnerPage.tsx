@@ -73,7 +73,8 @@ export default function InnerPage() {
                 src={artifactData?.webImage?.url}
                 component="img"
                 sx={{
-                  width: '50%',
+                  width: '35%',
+                  height: '100vh',
                   left: 0,
                   top: 0,
                   right: 0,
