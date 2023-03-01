@@ -23,6 +23,7 @@ export default function InnerPage() {
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
+        height: '80vh',
         margin: '3rem auto 0',
         width: '95%',
       }}
@@ -36,13 +37,15 @@ export default function InnerPage() {
       >
         <Card
           sx={{
-            maxWidth: '70%',
+            display: 'flex',
+            border: 'none',
+            boxShadow: 'none',
           }}
         >
           <CardMedia
             src={artifactData?.webImage?.url}
             component="img"
-            sx={{ position: 'relative' }}
+            sx={{ position: 'relative', objectFit: 'contain' }}
           />
           <Button
             onClick={handleOpen}
@@ -73,13 +76,13 @@ export default function InnerPage() {
                 src={artifactData?.webImage?.url}
                 component="img"
                 sx={{
-                  width: '35%',
                   height: '100vh',
                   left: 0,
                   top: 0,
                   right: 0,
                   bottom: 0,
                   margin: 'auto',
+                  objectFit: 'contain',
                   zIndex: 100,
                 }}
               />
@@ -173,7 +176,7 @@ export default function InnerPage() {
           target="_blank"
           style={{
             position: 'absolute',
-            bottom: '15rem',
+            bottom: '8rem',
             left: 0,
             right: 0,
             margin: 'auto',
