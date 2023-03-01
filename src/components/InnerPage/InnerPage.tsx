@@ -68,7 +68,7 @@ export default function InnerPage() {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box>
+            <Box sx={{backgroundColor: 'black', opacity: 0.9, width: '100%'}}>
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
@@ -80,6 +80,7 @@ export default function InnerPage() {
                   right: 0,
                   bottom: 0,
                   margin: 'auto',
+                  zIndex: 100
                 }}
               />
             </Box>
