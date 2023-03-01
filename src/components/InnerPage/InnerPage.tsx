@@ -68,7 +68,7 @@ export default function InnerPage() {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={{backgroundColor: 'black', opacity: 0.9, width: '100%'}}>
+            <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
@@ -80,9 +80,25 @@ export default function InnerPage() {
                   right: 0,
                   bottom: 0,
                   margin: 'auto',
-                  zIndex: 100
+                  zIndex: 100,
                 }}
               />
+              <Button
+                onClick={handleClose}
+                sx={{
+                  color: 'white',
+                  fontSize: '1rem',
+                  opacity: 0.8,
+                  position: 'absolute',
+                  top: '1rem',
+                  right: '2rem',
+                  '&.MuiButtonBase-root:hover': {
+                    background: 'black',
+                  },
+                }}
+              >
+                CLOSE
+              </Button>
             </Box>
           </Modal>
         </Card>
