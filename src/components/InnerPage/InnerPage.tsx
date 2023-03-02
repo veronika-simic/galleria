@@ -123,10 +123,10 @@ export default function InnerPage() {
             zIndex: 100,
           }}
         >
-          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={600}>
+          <Typography style={theme.typography.h3}>
             {artifactData.title}
           </Typography>
-          <Typography variant="h6" fontFamily={'Noto Serif'} color={theme.palette.primary.light}>
+          <Typography style={theme.typography.h4}>
             {artifactData.principalMaker}
           </Typography>
         </Box>
@@ -140,10 +140,7 @@ export default function InnerPage() {
         }}
       >
         <Typography
-          variant="subtitle2"
-          fontSize={'14rem'}
-          fontFamily={'Noto Serif'}
-          color={theme.palette.secondary.main}
+          style={theme.typography.subtitle1}
           zIndex={-10}
           position="absolute"
           right={'10rem'}
@@ -151,9 +148,8 @@ export default function InnerPage() {
           {artifactData.dating?.sortingDate}
         </Typography>
         <Typography
-          fontFamily={'Noto Serif'}
-          color={theme.palette.secondary.dark}
-          width={'45%'}
+          style={theme.typography.caption}
+          width={'60%'}
           margin="auto"
           position="absolute"
           top={'15rem'}

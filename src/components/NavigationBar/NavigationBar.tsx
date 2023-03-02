@@ -17,16 +17,13 @@ export default function NavigationBar() {
         <Link
           href="/"
           aria-label="Go to home page"
-          variant="h2"
-          sx={{ fontFamily: 'Abril Fatface' }}
           underline="none"
-          color={theme.palette.primary.dark}
+          style={theme.typography.h1}
         >
           galleria.
         </Link>
         <Typography
-          color={theme.palette.secondary.dark}
-          variant="subtitle1"
+          style={theme.typography.h4}
           sx={{ ml: { xs: '1rem', sm: 0 } }}
         >
           START SLIDESHOW

@@ -18,7 +18,7 @@ export default function ErrorPage() {
         rowGap: '2rem',
       }}
     >
-      <Typography variant="h2" color={theme.palette.primary.dark}>
+      <Typography style={theme.typography.h2}>
         OOOOOOOOPS !
       </Typography>
       <Typography variant="h6">
