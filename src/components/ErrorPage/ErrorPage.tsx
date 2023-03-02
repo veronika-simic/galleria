@@ -1,8 +1,9 @@
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, useTheme } from '@mui/material';
 
 import { Link } from 'react-router-dom';
 
 export default function ErrorPage() {
+  const theme = useTheme()
   return (
     <Box
       sx={{
@@ -17,7 +18,7 @@ export default function ErrorPage() {
         rowGap: '2rem',
       }}
     >
-      <Typography variant="h2" color={'#683183'}>
+      <Typography variant="h2" color={theme.palette.primary.dark}>
         OOOOOOOOPS !
       </Typography>
       <Typography variant="h6">
@@ -34,11 +35,11 @@ export default function ErrorPage() {
         variant="contained"
         size="large"
         sx={{
-          backgroundColor: '#683183',
+          backgroundColor: theme.palette.primary.dark,
           marginTop: '1rem',
           fontSize: '1.5rem',
           '&:hover': {
-            backgroundColor: '#472183',
+            backgroundColor: theme.palette.secondary.dark,
           },
         }}
       >

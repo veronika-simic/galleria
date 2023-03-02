@@ -1,7 +1,9 @@
-import { Divider, Typography, Link } from '@mui/material';
+import { Divider, Typography, Link, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
+import theme from '../../theme';
 
 export default function NavigationBar() {
+  const theme = useTheme()
   return (
     <Box sx={{ width: '95%', margin: '0 auto' }}>
       <Box
@@ -18,12 +20,12 @@ export default function NavigationBar() {
           variant="h2"
           sx={{ fontFamily: 'Abril Fatface' }}
           underline="none"
-          color="inherit"
+          color={theme.palette.primary.dark}
         >
           galleria.
         </Link>
         <Typography
-          color="grey"
+          color={theme.palette.secondary.dark}
           variant="subtitle1"
           sx={{ ml: { xs: '1rem', sm: 0 } }}
         >

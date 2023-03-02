@@ -2,11 +2,12 @@ import { getDataById } from '../api/axios';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import { Button, Card, CardMedia, Modal, Typography } from '@mui/material';
+import { Button, Card, CardMedia, Modal, Typography, useTheme } from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
+  const theme = useTheme();
   const [artifactData, setArtifactData] = useState<any>([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -50,15 +51,15 @@ export default function InnerPage() {
           <Button
             onClick={handleOpen}
             sx={{
-              backgroundColor: 'black',
+              backgroundColor: theme.palette.primary.dark,
               bottom: '1rem',
-              color: 'white',
+              color: theme.palette.secondary.light,
               left: '1rem',
               padding: '0.8rem 1.5rem',
               position: 'absolute',
               opacity: '0.7',
               '&.MuiButtonBase-root:hover': {
-                background: 'black',
+                background: theme.palette.primary.dark
               },
             }}
           >
@@ -71,7 +72,7 @@ export default function InnerPage() {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
+            <Box sx={{ backgroundColor: theme.palette.primary.dark, width: '100%' }}>
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
@@ -96,7 +97,7 @@ export default function InnerPage() {
                   top: '1rem',
                   right: '2rem',
                   '&.MuiButtonBase-root:hover': {
-                    background: 'black',
+                    background: theme.palette.primary.dark,
                   },
                 }}
               >
@@ -109,7 +110,7 @@ export default function InnerPage() {
           sx={{
             alignItems: 'left',
             backgroundColor: 'white',
-            color: '#010203',
+            color: theme.palette.primary.main,
             display: 'flex',
             height: '40%',
             flexDirection: 'column',
@@ -125,7 +126,7 @@ export default function InnerPage() {
           <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={600}>
             {artifactData.title}
           </Typography>
-          <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
+          <Typography variant="h6" fontFamily={'Noto Serif'} color={theme.palette.primary.light}>
             {artifactData.principalMaker}
           </Typography>
         </Box>
@@ -142,7 +143,7 @@ export default function InnerPage() {
           variant="subtitle2"
           fontSize={'14rem'}
           fontFamily={'Noto Serif'}
-          color={'#EEEEEE'}
+          color={theme.palette.secondary.main}
           zIndex={-10}
           position="absolute"
           right={'10rem'}
@@ -151,7 +152,7 @@ export default function InnerPage() {
         </Typography>
         <Typography
           fontFamily={'Noto Serif'}
-          color={'#7F8487'}
+          color={theme.palette.secondary.dark}
           width={'45%'}
           margin="auto"
           position="absolute"
@@ -181,7 +182,7 @@ export default function InnerPage() {
             right: 0,
             margin: 'auto',
             width: '45%',
-            color: '#B2B2B2',
+            color: theme.palette.primary.light,
           }}
         >
           GO TO SOURCE

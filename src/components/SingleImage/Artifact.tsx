@@ -5,17 +5,17 @@ import { useState } from 'react';
 import ImageFile from './ImageFile';
 import ImageCaption from './ImageCaption';
 import { Link } from 'react-router-dom';
-import { Skeleton } from '@mui/material';
+import { Skeleton, useTheme } from '@mui/material';
 export default function Artifact(props: {
   data: ArtifactModel;
   loading: boolean;
 }) {
   const [onHover, setOnHover] = useState({ raised: false, shadow: 1 });
-  console.log(props.loading);
+  const theme = useTheme()
   return (
     <>
       {props.loading ? (
-        <Skeleton variant="rectangular" color="grey">
+        <Skeleton variant="rectangular" color={theme.palette.secondary.main}>
           <ImageFile data={props.data} />
         </Skeleton>
       ) : (
@@ -33,7 +33,7 @@ export default function Artifact(props: {
                   bottom: '5%',
                   left: '5%',
                   width: '80%',
-                  color: 'whitesmoke',
+                  color: theme.palette.secondary.light,
                 }}
               >
                 <ImageCaption

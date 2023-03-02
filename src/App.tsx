@@ -12,6 +12,7 @@ import NavigationBar from './components/NavigationBar/NavigationBar';
 import InnerPage from './components/InnerPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
+import { CssBaseline } from '@mui/material';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline enableColorScheme/>
       <RouterProvider router={router} />
     </ThemeProvider>
   );
