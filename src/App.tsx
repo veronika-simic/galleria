@@ -8,10 +8,11 @@ import {
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import HomePage from './components/HomePage/Home';
-import NavigationBar from './components/NavigationBar/NavigationBar';
 import InnerPage from './components/InnerPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
+import { CssBaseline, Box } from '@mui/material';
+import WithoutNav from './routes/WithoutNav';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,7 +21,9 @@ const router = createBrowserRouter(
         <Route path="/" element={<HomePage />} />
         <Route path="/artifacts/:artifactId" element={<InnerPage />} />
       </Route>
-      <Route path="*" element={<ErrorPage />} />
+      <Route element={<WithoutNav />}>
+        <Route path="*" element={<ErrorPage />} />
+      </Route>
     </>
   )
 );
@@ -28,6 +31,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline enableColorScheme />
       <RouterProvider router={router} />
     </ThemeProvider>
   );

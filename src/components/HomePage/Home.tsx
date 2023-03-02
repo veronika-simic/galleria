@@ -21,8 +21,6 @@ export default function HomePage() {
     <Box
       sx={{
         margin: '2rem auto 0',
-        width: '95%',
-        overflow: 'hidden',
       }}
     >
       <Masonry

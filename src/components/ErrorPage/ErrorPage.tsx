@@ -1,26 +1,14 @@
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, useTheme } from '@mui/material';
 
 import { Link } from 'react-router-dom';
+import HomeButtonCustomization from './HomeButton';
 
 export default function ErrorPage() {
+  const theme = useTheme();
   return (
-    <Box
-      sx={{
-        overflow: 'hidden',
-        position: 'absolute',
-        width: '95%',
-        height: '95%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        rowGap: '2rem',
-      }}
-    >
-      <Typography variant="h2" color={'#683183'}>
-        OOOOOOOOPS !
-      </Typography>
-      <Typography variant="h6">
+    <>
+      <Typography style={theme.typography.h2}>OOOOOOOOPS !</Typography>
+      <Typography variant="h5">
         <span style={{ marginLeft: '3.5rem' }}>We don't have this page.</span>
         <span style={{ display: 'block' }}>
           The responsible person will be fired.
@@ -28,22 +16,7 @@ export default function ErrorPage() {
       </Typography>
 
       <Typography variant="subtitle2">thanks to you</Typography>
-      <Button
-        component={Link}
-        to="/"
-        variant="contained"
-        size="large"
-        sx={{
-          backgroundColor: '#683183',
-          marginTop: '1rem',
-          fontSize: '1.5rem',
-          '&:hover': {
-            backgroundColor: '#472183',
-          },
-        }}
-      >
-        BACK TO MAIN PAGE
-      </Button>
-    </Box>
+      <HomeButtonCustomization />
+    </>
   );
 }

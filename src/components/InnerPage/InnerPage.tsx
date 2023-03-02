@@ -2,11 +2,20 @@ import { getDataById } from '../api/axios';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import { Button, Card, CardMedia, Modal, Typography } from '@mui/material';
+import {
+  Card,
+  CardMedia,
+  Modal,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
+import { CloseButton } from './CloseButton';
+import { OpenButton } from './OpenButton';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
+  const theme = useTheme();
   const [artifactData, setArtifactData] = useState<any>([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -25,7 +34,6 @@ export default function InnerPage() {
         justifyContent: 'space-between',
         height: '80vh',
         margin: '3rem auto 0',
-        width: '95%',
       }}
     >
       <Box
@@ -47,31 +55,22 @@ export default function InnerPage() {
             component="img"
             sx={{ position: 'relative', objectFit: 'contain' }}
           />
-          <Button
-            onClick={handleOpen}
-            sx={{
-              backgroundColor: 'black',
-              bottom: '1rem',
-              color: 'white',
-              left: '1rem',
-              padding: '0.8rem 1.5rem',
-              position: 'absolute',
-              opacity: '0.7',
-              '&.MuiButtonBase-root:hover': {
-                background: 'black',
-              },
-            }}
-          >
+          <OpenButton onClick={handleOpen}>
             <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
             VIEW IMAGE
-          </Button>
+          </OpenButton>
           <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
+            <Box
+              sx={{
+                backgroundColor: theme.palette.primary.dark,
+                width: '100%',
+              }}
+            >
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
@@ -86,22 +85,7 @@ export default function InnerPage() {
                   zIndex: 100,
                 }}
               />
-              <Button
-                onClick={handleClose}
-                sx={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  opacity: 0.8,
-                  position: 'absolute',
-                  top: '1rem',
-                  right: '2rem',
-                  '&.MuiButtonBase-root:hover': {
-                    background: 'black',
-                  },
-                }}
-              >
-                CLOSE
-              </Button>
+              <CloseButton onClick={handleClose}>CLOSE</CloseButton>
             </Box>
           </Modal>
         </Card>
@@ -109,7 +93,7 @@ export default function InnerPage() {
           sx={{
             alignItems: 'left',
             backgroundColor: 'white',
-            color: '#010203',
+            color: theme.palette.primary.main,
             display: 'flex',
             height: '40%',
             flexDirection: 'column',
@@ -122,10 +106,10 @@ export default function InnerPage() {
             zIndex: 100,
           }}
         >
-          <Typography variant="h3" fontFamily={'Noto Serif'} fontWeight={600}>
+          <Typography style={theme.typography.h3}>
             {artifactData.title}
           </Typography>
-          <Typography variant="h6" fontFamily={'Noto Serif'} color={'#B2B2B2'}>
+          <Typography style={theme.typography.h4}>
             {artifactData.principalMaker}
           </Typography>
         </Box>
@@ -139,10 +123,7 @@ export default function InnerPage() {
         }}
       >
         <Typography
-          variant="subtitle2"
-          fontSize={'14rem'}
-          fontFamily={'Noto Serif'}
-          color={'#EEEEEE'}
+          style={theme.typography.subtitle1}
           zIndex={-10}
           position="absolute"
           right={'10rem'}
@@ -150,9 +131,8 @@ export default function InnerPage() {
           {artifactData.dating?.sortingDate}
         </Typography>
         <Typography
-          fontFamily={'Noto Serif'}
-          color={'#7F8487'}
-          width={'45%'}
+          style={theme.typography.caption}
+          width={'60%'}
           margin="auto"
           position="absolute"
           top={'15rem'}
@@ -181,7 +161,7 @@ export default function InnerPage() {
             right: 0,
             margin: 'auto',
             width: '45%',
-            color: '#B2B2B2',
+            color: theme.palette.primary.light,
           }}
         >
           GO TO SOURCE
