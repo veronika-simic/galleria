@@ -1,14 +1,13 @@
 import { Box, Typography, Button, useTheme } from '@mui/material';
 
 import { Link } from 'react-router-dom';
+import HomeButtonCustomization from './HomeButton';
 
 export default function ErrorPage() {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <>
-      <Typography style={theme.typography.h2}>
-        OOOOOOOOPS !
-      </Typography>
+      <Typography style={theme.typography.h2}>OOOOOOOOPS !</Typography>
       <Typography variant="h5">
         <span style={{ marginLeft: '3.5rem' }}>We don't have this page.</span>
         <span style={{ display: 'block' }}>
@@ -17,22 +16,7 @@ export default function ErrorPage() {
       </Typography>
 
       <Typography variant="subtitle2">thanks to you</Typography>
-      <Button
-        component={Link}
-        to="/"
-        variant="contained"
-        size="large"
-        sx={{
-          backgroundColor: theme.palette.primary.dark,
-          marginTop: '1rem',
-          fontSize: '1.5rem',
-          '&:hover': {
-            backgroundColor: theme.palette.secondary.dark,
-          },
-        }}
-      >
-        BACK TO MAIN PAGE
-      </Button>
+      <HomeButtonCustomization />
     </>
   );
 }
