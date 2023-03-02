@@ -2,8 +2,16 @@ import { getDataById } from '../api/axios';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import { Button, Card, CardMedia, Modal, Typography, useTheme } from '@mui/material';
+import {
+  Card,
+  CardMedia,
+  Modal,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
+import { CloseButton } from './CloseButton';
+import { OpenButton } from './OpenButton';
 
 export default function InnerPage() {
   const { artifactId } = useParams();
@@ -26,7 +34,6 @@ export default function InnerPage() {
         justifyContent: 'space-between',
         height: '80vh',
         margin: '3rem auto 0',
-        width: '95%',
       }}
     >
       <Box
@@ -48,31 +55,22 @@ export default function InnerPage() {
             component="img"
             sx={{ position: 'relative', objectFit: 'contain' }}
           />
-          <Button
-            onClick={handleOpen}
-            sx={{
-              backgroundColor: theme.palette.primary.dark,
-              bottom: '1rem',
-              color: theme.palette.secondary.light,
-              left: '1rem',
-              padding: '0.8rem 1.5rem',
-              position: 'absolute',
-              opacity: '0.7',
-              '&.MuiButtonBase-root:hover': {
-                background: theme.palette.primary.dark
-              },
-            }}
-          >
+          <OpenButton onClick={handleOpen}>
             <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
             VIEW IMAGE
-          </Button>
+          </OpenButton>
           <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={{ backgroundColor: theme.palette.primary.dark, width: '100%' }}>
+            <Box
+              sx={{
+                backgroundColor: theme.palette.primary.dark,
+                width: '100%',
+              }}
+            >
               <CardMedia
                 src={artifactData?.webImage?.url}
                 component="img"
@@ -87,22 +85,7 @@ export default function InnerPage() {
                   zIndex: 100,
                 }}
               />
-              <Button
-                onClick={handleClose}
-                sx={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  opacity: 0.8,
-                  position: 'absolute',
-                  top: '1rem',
-                  right: '2rem',
-                  '&.MuiButtonBase-root:hover': {
-                    background: theme.palette.primary.dark,
-                  },
-                }}
-              >
-                CLOSE
-              </Button>
+              <CloseButton onClick={handleClose}>CLOSE</CloseButton>
             </Box>
           </Modal>
         </Card>

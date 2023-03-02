@@ -5,7 +5,7 @@ import theme from '../../theme';
 export default function NavigationBar() {
   const theme = useTheme()
   return (
-    <Box sx={{ width: '95%', margin: '0 auto' }}>
+    <>
       <Box
         sx={{
           m: { xs: 0, sm: '1.5rem' },
@@ -30,6 +30,6 @@ export default function NavigationBar() {
         </Typography>
       </Box>
       <Divider />
-    </Box>
+    </>
   );
 }

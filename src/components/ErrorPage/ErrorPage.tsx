@@ -5,23 +5,11 @@ import { Link } from 'react-router-dom';
 export default function ErrorPage() {
   const theme = useTheme()
   return (
-    <Box
-      sx={{
-        overflow: 'hidden',
-        position: 'absolute',
-        width: '95%',
-        height: '95%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        rowGap: '2rem',
-      }}
-    >
+    <>
       <Typography style={theme.typography.h2}>
         OOOOOOOOPS !
       </Typography>
-      <Typography variant="h6">
+      <Typography variant="h5">
         <span style={{ marginLeft: '3.5rem' }}>We don't have this page.</span>
         <span style={{ display: 'block' }}>
           The responsible person will be fired.
@@ -45,6 +33,6 @@ export default function ErrorPage() {
       >
         BACK TO MAIN PAGE
       </Button>
-    </Box>
+    </>
   );
 }
