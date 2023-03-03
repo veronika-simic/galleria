@@ -20,14 +20,11 @@ export default function HomePage() {
   return (
     <Box
       sx={{
+        height: '100%',
         margin: '2rem auto 0',
       }}
     >
-      <Masonry
-        columns={{ xs: 1, sm: 2, md: 2, lg: 4 }}
-        spacing={{ xs: 2 }}
-        sx={{ height: 'auto', width: 'auto' }}
-      >
+      <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }} spacing={{ xs: 2 }}>
         {data.map((data: ArtifactModel) => (
           <Artifact key={data.objectNumber} data={data} loading={loading} />
         ))}
