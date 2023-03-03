@@ -15,7 +15,7 @@ export default function RightCard(props: { data: any }) {
       }}
     >
       <Typography>{props.data.dating?.sortingDate}</Typography>
-      <CardContent sx={{ width: '50%' }}>
+      <CardContent sx={{ width: {xs: '100%', lg: '50%'} }}>
         <Typography>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae

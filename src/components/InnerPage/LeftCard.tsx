@@ -1,17 +1,12 @@
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  Typography,
-  CardActions,
-} from '@mui/material';
+import { Card, CardHeader, CardMedia, Typography } from '@mui/material';
 import CardModal from './Modal';
+import { CardActions } from '@mui/material';
 export default function LeftCard(props: { data: any }) {
   return (
     <Card
       sx={{
         boxShadow: 'none',
-        width: '40%',
+        width: {xs: '80%', lg: '40%'},
       }}
     >
       <CardHeader
@@ -26,13 +21,14 @@ export default function LeftCard(props: { data: any }) {
           </Typography>
         }
       />
-     
-      <CardMedia
-        src={props.data?.webImage?.url}
-        component="img"
-        sx={{ objectFit: 'contain' }}
-      ></CardMedia>
-      <CardModal data={props.data?.webImage?.url} />
+      <CardActions sx={{position: 'relative', padding: 0}}>
+        <CardModal data={props.data?.webImage?.url} />
+        <CardMedia
+          src={props.data?.webImage?.url}
+          component="img"
+          sx={{ objectFit: 'contain' }}
+        ></CardMedia>
+      </CardActions>
     </Card>
   );
 }

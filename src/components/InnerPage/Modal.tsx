@@ -1,4 +1,4 @@
-import { Box, Button, CardActions, CardMedia, Modal } from '@mui/material';
+import { Card, Button, CardActions, CardMedia, Modal } from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 import { useState } from 'react';
 export default function CardModal(props: { data: any }) {
@@ -11,18 +11,18 @@ export default function CardModal(props: { data: any }) {
         onClick={handleOpen}
         sx={{
           backgroundColor: 'black',
+          bottom: '0.5rem',
           color: 'white',
-          padding: '0.8rem 1.5rem',
-          position: 'absolute',
+          left: '0.8rem',
+          padding: '0.75rem',
           opacity: '0.7',
           '&.MuiButtonBase-root:hover': {
             background: 'black',
           },
-          bottom: '0.75rem',
-          marginLeft: '0.75rem',
+          position: 'absolute', 
         }}
       >
-        <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
+        <OpenWithIcon sx={{height: '1.5rem', marginRight: '0.5rem' }} />
         VIEW IMAGE
       </Button>
       <Modal
@@ -31,19 +31,13 @@ export default function CardModal(props: { data: any }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
+        <Card sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
           <CardMedia
             src={props.data}
             component="img"
             sx={{
               height: '100vh',
-              left: 0,
-              top: 0,
-              right: 0,
-              bottom: 0,
-              margin: 'auto',
               objectFit: 'contain',
-              zIndex: 100,
             }}
           />
           <Button
@@ -53,7 +47,7 @@ export default function CardModal(props: { data: any }) {
               fontSize: '1rem',
               opacity: 0.8,
               position: 'absolute',
-              top: '1rem',
+              top: '2rem',
               right: '2rem',
               '&.MuiButtonBase-root:hover': {
                 background: 'black',
@@ -62,7 +56,7 @@ export default function CardModal(props: { data: any }) {
           >
             CLOSE
           </Button>
-        </Box>
+        </Card>
       </Modal>
     </>
   );

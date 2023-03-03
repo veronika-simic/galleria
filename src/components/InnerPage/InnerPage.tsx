@@ -21,9 +21,11 @@ export default function InnerPage() {
     <Box
       sx={{
         display: 'flex',
+        flexDirection: {xs: 'column', lg: 'row'},
         justifyContent: 'space-around',
-        margin: '2rem auto 0',
-        position: 'relative',
+        alignItems: 'center',
+        margin: '1rem auto 0',
+        rowGap: '1.5rem',
         width: '95%',
       }}
     >
