@@ -1,17 +1,17 @@
-import { createTheme} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 let darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#010203',
-      light: '#B2B2B2',
-      dark: '#191825',
+      main: '#FFFFFF',
+      light: '#F7F5F2',
+      dark: '#F9F9F9',
     },
     secondary: {
-      main: '#EEEEEE',
-      light: '#FFFFFF',
-      dark: '#7F8487',
+      main: '#F8F0DF',
+      light: '#FEFBF3',
+      dark: '#9D9D9D',
     },
   },
 });
@@ -30,6 +30,7 @@ darkTheme = createTheme(darkTheme, {
       fontSize: '3.5rem',
     },
     h3: {
+      color: darkTheme.palette.secondary.dark,
       fontFamily: 'Noto Serif',
       fontWeight: 600,
     },
@@ -44,7 +45,7 @@ darkTheme = createTheme(darkTheme, {
     h6: {
       color: darkTheme.palette.secondary.light,
       fontFamily: 'Noto Serif',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
     },
     subtitle1: {
       color: darkTheme.palette.secondary.main,

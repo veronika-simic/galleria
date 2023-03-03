@@ -16,6 +16,7 @@ import { useMemo, useState } from 'react';
 import lightTheme from './theme/light';
 import darkTheme from './theme/dark';
 import { ColorContext } from './models/ColorContext';
+import { SwitchModeButton } from './components/SwitchButton/SwitchButton';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
