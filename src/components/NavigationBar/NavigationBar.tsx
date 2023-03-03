@@ -1,9 +1,9 @@
 import { Divider, Typography, Link, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
-import theme from '../../theme';
+import theme from '../../theme/light';
 
 export default function NavigationBar() {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <>
       <Box
@@ -22,12 +22,6 @@ export default function NavigationBar() {
         >
           galleria.
         </Link>
-        <Typography
-          style={theme.typography.h4}
-          sx={{ ml: { xs: '1rem', sm: 0 } }}
-        >
-          START SLIDESHOW
-        </Typography>
       </Box>
       <Divider />
     </>

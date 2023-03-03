@@ -1,7 +1,8 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme} from '@mui/material/styles';
 
-let theme = createTheme({
+let lightTheme = createTheme({
   palette: {
+    mode: 'light',
     primary: {
       main: '#010203',
       light: '#B2B2B2',
@@ -15,15 +16,15 @@ let theme = createTheme({
   },
 });
 
-theme = createTheme(theme, {
+lightTheme = createTheme(lightTheme, {
   typography: {
     h1: {
-      color: theme.palette.primary.dark,
+      color: lightTheme.palette.primary.dark,
       fontFamily: 'Abril Fatface',
       fontSize: '4rem',
     },
     h2: {
-      color: theme.palette.primary.dark,
+      color: lightTheme.palette.primary.dark,
       fontFamily: 'Helvetica',
       fontWeight: '400',
       fontSize: '3.5rem',
@@ -33,7 +34,7 @@ theme = createTheme(theme, {
       fontWeight: 600,
     },
     h4: {
-      color: theme.palette.secondary.dark,
+      color: lightTheme.palette.secondary.dark,
       fontSize: '1.75rem',
     },
     h5: {
@@ -41,21 +42,21 @@ theme = createTheme(theme, {
       fontSize: '1.25rem',
     },
     h6: {
-      color: theme.palette.secondary.light,
+      color: lightTheme.palette.secondary.light,
       fontFamily: 'Noto Serif',
       fontWeight: 'bold'
     },
     subtitle1: {
-      color: theme.palette.secondary.main,
+      color: lightTheme.palette.secondary.main,
       fontFamily: 'Noto Serif',
       fontSize: '14rem',
     },
     caption: {
-      color: theme.palette.secondary.dark,
+      color: lightTheme.palette.secondary.dark,
       fontFamily: 'Noto Serif',
       fontSize: '1.25rem',
     },
   },
 });
 
-export default theme;
+export default lightTheme;
