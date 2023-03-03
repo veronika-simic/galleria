@@ -8,7 +8,9 @@ export default function LeftCard(props: { data: any }) {
       sx={{
         boxShadow: 'none',
         width: {xs: '80%', lg: '40%'},
+        
       }}
+      elevation={0}
     >
       <CardHeader
         title={

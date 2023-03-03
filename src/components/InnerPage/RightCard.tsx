@@ -1,7 +1,8 @@
-import { Card, Typography, CardContent, CardActions } from '@mui/material';
+import { Card, Typography, CardContent, CardActions, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export default function RightCard(props: { data: any }) {
+    const theme = useTheme()
   return (
     <Card
       sx={{
@@ -9,14 +10,15 @@ export default function RightCard(props: { data: any }) {
         boxShadow: 'none',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
         rowGap: '2rem',
-        width: '45%',
+        width: '40%',
+        position: 'relative'
       }}
+      elevation={0}
     >
-      <Typography>{props.data.dating?.sortingDate}</Typography>
-      <CardContent sx={{ width: {xs: '100%', lg: '50%'} }}>
-        <Typography>
+      <Typography style={theme.typography.caption} sx={{position: 'absolute', top:0, left: 0}}>{props.data.dating?.sortingDate}</Typography>
+      <CardContent sx={{ width: {xs: '100%', lg: '70%'} }}>
+        <Typography style={theme.typography.h5}>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -34,7 +36,9 @@ export default function RightCard(props: { data: any }) {
             'https://www.rijksmuseum.nl/en/rijksstudio?ii=0&p=0&from=2023-02-28T08%3A49%3A26.6408842Z'
           }
           target="_blank"
+          style={theme.typography.caption}
         >
+        
           GO TO SOURCE
         </Link>
       </CardActions>

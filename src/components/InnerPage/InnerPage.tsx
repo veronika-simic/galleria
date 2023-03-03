@@ -22,10 +22,11 @@ export default function InnerPage() {
       sx={{
         display: 'flex',
         flexDirection: {xs: 'column', lg: 'row'},
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         rowGap: '1.5rem',
-        width: '95%',
+        width: '100%',
+        height: '80vh'
       }}
     >
       <LeftCard data={artifactData} />
