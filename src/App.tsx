@@ -6,15 +6,16 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme/light';
 import HomePage from './components/HomePage/Home';
 import InnerPage from './components/InnerPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
-import { CssBaseline, PaletteMode } from '@mui/material';
+import { CssBaseline, PaletteMode, createTheme } from '@mui/material';
 import WithoutNav from './routes/WithoutNav';
-import { useState } from 'react';
-;
+import { useMemo, useState } from 'react';
+import lightTheme from './theme/light';
+import darkTheme from './theme/dark';
+import { ColorContext } from './models/ColorContext';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -30,12 +31,29 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const [mode, setMode] = useState<PaletteMode>('light')
+  const [mode, setMode] = useState<PaletteMode>('light');
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode: PaletteMode) =>
+          prevMode === 'light' ? 'dark' : 'light'
+        );
+      },
+    }),
+    []
+  );
+
+  const theme = useMemo(
+    () => createTheme(mode === 'light' ? lightTheme : darkTheme),
+    [mode]
+  );
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline enableColorScheme />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <ColorContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline enableColorScheme />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </ColorContext.Provider>
   );
 }
 
