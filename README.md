@@ -57,24 +57,7 @@ Start the project by running the following command from the root
 
 Project is: _in progress_
 
-## Room for Improvement
-
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-
-- Feature to be added 1
-- Feature to be added 2
-
-## Acknowledgements
-
-- Many thanks to [@AntonijaŠimić](https://github.com/tonkec) for suggestions and mentorship
 
 ## Contact
 
-Created by [@tea](https://github.com/teacrvelin21) and [@vera](https://github.com/veronika-simic) - feel free to contact us!
+Created by [@vera](https://github.com/veronika-simic) - feel free to contact me!
