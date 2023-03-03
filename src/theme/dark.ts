@@ -13,7 +13,7 @@ let darkTheme = createTheme({
       light: '#FEFBF3',
       dark: '#9D9D9D',
     },
-  },
+  }
 });
 
 darkTheme = createTheme(darkTheme, {

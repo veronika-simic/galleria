@@ -1,6 +1,4 @@
-import { Box, Typography, Button, useTheme } from '@mui/material';
-
-import { Link } from 'react-router-dom';
+import { Typography, useTheme } from '@mui/material';
 import HomeButtonCustomization from './HomeButton';
 
 export default function ErrorPage() {

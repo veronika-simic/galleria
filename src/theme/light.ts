@@ -42,7 +42,6 @@ lightTheme = createTheme(lightTheme, {
       fontSize: '1.25rem',
     },
     h6: {
-      color: lightTheme.palette.secondary.light,
       fontFamily: 'Noto Serif',
       fontWeight: 'bold'
     },

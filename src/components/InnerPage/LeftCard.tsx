@@ -1,7 +1,8 @@
-import { Card, CardHeader, CardMedia, Typography } from '@mui/material';
+import { Card, CardHeader, CardMedia, Typography, useTheme } from '@mui/material';
 import CardModal from './Modal';
 import { CardActions } from '@mui/material';
 export default function LeftCard(props: { data: any }) {
+  const theme = useTheme()
   return (
     <Card
       sx={{
@@ -11,12 +12,12 @@ export default function LeftCard(props: { data: any }) {
     >
       <CardHeader
         title={
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom style={theme.typography.h5}>
             {props.data.title}
           </Typography>
         }
         subheader={
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography style={theme.typography.h6}>
             {props.data.principalMaker}
           </Typography>
         }

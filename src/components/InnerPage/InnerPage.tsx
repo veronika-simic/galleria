@@ -24,7 +24,6 @@ export default function InnerPage() {
         flexDirection: {xs: 'column', lg: 'row'},
         justifyContent: 'space-around',
         alignItems: 'center',
-        margin: '1rem auto 0',
         rowGap: '1.5rem',
         width: '95%',
       }}
