@@ -22,8 +22,6 @@ export default function HomePage() {
       sx={{
         height: '100%',
         margin: '2rem auto 0',
-        width: '95%',
-        overflow: 'hidden',
       }}
     >
       <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }} spacing={{ xs: 2 }}>

@@ -1,22 +1,16 @@
+import { useTheme } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
-export default function ImageCaption(props: {
-  title: string;
-  author: string;
-}) {
+export default function ImageCaption(props: { title: string; author: string }) {
+  const theme = useTheme();
   return (
     <>
       <Typography
-        variant="h5"
-        fontFamily={'Crimson Text'}
-        fontWeight={'bold'}
-        letterSpacing={1.5}
+        style={theme.typography.h5}
       >
         {props.title}
       </Typography>
-      <Typography variant="h6" fontFamily={'Crimson Text'}>
-        {props.author}
-      </Typography>
+      <Typography style={theme.typography.h6}>{props.author}</Typography>
     </>
   );
 }

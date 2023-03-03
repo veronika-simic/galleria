@@ -1,9 +1,11 @@
-import { Divider, Typography, Link } from '@mui/material';
+import { Divider, Typography, Link, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
+import theme from '../../theme';
 
 export default function NavigationBar() {
+  const theme = useTheme()
   return (
-    <Box sx={{ width: '95%', margin: '0 auto' }}>
+    <>
       <Box
         sx={{
           m: { xs: 0, sm: '1.5rem' },
@@ -15,22 +17,19 @@ export default function NavigationBar() {
         <Link
           href="/"
           aria-label="Go to home page"
-          variant="h2"
-          sx={{ fontFamily: 'Abril Fatface' }}
           underline="none"
-          color="inherit"
+          style={theme.typography.h1}
         >
           galleria.
         </Link>
         <Typography
-          color="grey"
-          variant="subtitle1"
+          style={theme.typography.h4}
           sx={{ ml: { xs: '1rem', sm: 0 } }}
         >
           START SLIDESHOW
         </Typography>
       </Box>
       <Divider />
-    </Box>
+    </>
   );
 }
