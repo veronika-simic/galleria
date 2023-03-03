@@ -6,7 +6,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
+import theme from './theme/light';
 import HomePage from './components/HomePage/Home';
 import InnerPage from './components/InnerPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
