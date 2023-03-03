@@ -11,9 +11,10 @@ import HomePage from './components/HomePage/Home';
 import InnerPage from './components/InnerPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
-import { CssBaseline, Box } from '@mui/material';
+import { CssBaseline, PaletteMode } from '@mui/material';
 import WithoutNav from './routes/WithoutNav';
-
+import { useState } from 'react';
+;
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [mode, setMode] = useState<PaletteMode>('light')
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
