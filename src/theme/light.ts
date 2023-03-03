@@ -53,7 +53,7 @@ lightTheme = createTheme(lightTheme, {
     caption: {
       color: lightTheme.palette.secondary.dark,
       fontFamily: 'Noto Serif',
-      fontSize: '1.25rem',
+      fontSize: '1rem',
     },
   },
 });

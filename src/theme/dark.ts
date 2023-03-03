@@ -13,7 +13,7 @@ let darkTheme = createTheme({
       light: '#FEFBF3',
       dark: '#9D9D9D',
     },
-  }
+  },
 });
 
 darkTheme = createTheme(darkTheme, {
@@ -48,14 +48,15 @@ darkTheme = createTheme(darkTheme, {
       fontWeight: 'bold',
     },
     subtitle1: {
-      color: darkTheme.palette.secondary.main,
+      color: darkTheme.palette.secondary.light,
       fontFamily: 'Noto Serif',
       fontSize: '14rem',
+      fontWeight: 'light',
     },
     caption: {
       color: darkTheme.palette.secondary.dark,
       fontFamily: 'Noto Serif',
-      fontSize: '1.25rem',
+      fontSize: '1rem',
     },
   },
 });

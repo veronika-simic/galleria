@@ -5,10 +5,10 @@ import { SwitchModeButton } from '../components/SwitchButton/SwitchButton';
 
 export default () => {
   return (
-    <Box sx={{margin: '0 auto', width: '95%', overflow: 'hidden'}}>
+    <Box sx={{ margin: '0 auto', width: '90%', overflow: 'hidden' }}>
       <NavigationBar />
-      <SwitchModeButton/>
-      <Box sx={{display: 'flex', margin: '1rem 0 auto'}}/>
+      <SwitchModeButton />
+      <Box sx={{ display: 'flex', margin: '1rem 0 auto' }} />
       <Outlet />
     </Box>
   );
