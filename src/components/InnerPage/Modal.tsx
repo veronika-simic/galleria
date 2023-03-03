@@ -1,18 +1,25 @@
-/* import { Box, Button, CardActions, CardMedia, Modal } from '@mui/material';
+import { Box, Button, CardActions, CardMedia, Modal } from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
-export default function Modal() {
+import { useState } from 'react';
+export default function CardModal(props: { data: any }) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
-    <CardActions>
+    <>
       <Button
         onClick={handleOpen}
         sx={{
           backgroundColor: 'black',
           color: 'white',
           padding: '0.8rem 1.5rem',
+          position: 'absolute',
           opacity: '0.7',
           '&.MuiButtonBase-root:hover': {
             background: 'black',
           },
+          bottom: '0.75rem',
+          marginLeft: '0.75rem',
         }}
       >
         <OpenWithIcon sx={{ marginRight: '0.5rem' }} />
@@ -26,7 +33,7 @@ export default function Modal() {
       >
         <Box sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
           <CardMedia
-            src={artifactData?.webImage?.url}
+            src={props.data}
             component="img"
             sx={{
               height: '100vh',
@@ -57,6 +64,6 @@ export default function Modal() {
           </Button>
         </Box>
       </Modal>
-    </CardActions>
+    </>
   );
-} */
+}
