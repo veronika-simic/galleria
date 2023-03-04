@@ -1,14 +1,12 @@
 import NavigationBar from '../components/NavigationBar/NavigationBar';
 import { Outlet } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { SwitchModeButton } from '../components/SwitchButton/SwitchButton';
 
 export default () => {
   return (
     <Box sx={{ margin: '0 auto', width: '90%', overflow: 'hidden' }}>
       <NavigationBar />
-      <SwitchModeButton />
-      <Box sx={{ display: 'flex', margin: '1rem 0 auto' }} />
+      <Box sx={{ display: 'flex', margin: '1rem 0 auto', width: '100%', height: '100%' }} />
       <Outlet />
     </Box>
   );

@@ -1,4 +1,4 @@
-import { Card, Button, CardActions, CardMedia, Modal } from '@mui/material';
+import { Card, Button, CardMedia, Modal } from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 import { useState } from 'react';
 export default function CardModal(props: { data: any }) {
@@ -19,7 +19,7 @@ export default function CardModal(props: { data: any }) {
           '&.MuiButtonBase-root:hover': {
             background: 'black',
           },
-          position: 'absolute', 
+          position: 'absolute',
         }}
       >
         <OpenWithIcon sx={{height: '1.5rem', marginRight: '0.5rem' }} />

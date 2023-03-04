@@ -1,6 +1,8 @@
-import { Divider, Typography, Link, useTheme } from '@mui/material';
+import { Divider, Typography, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 import theme from '../../theme/light';
+import { SwitchModeButton } from '../SwitchButton/SwitchButton';
 
 export default function NavigationBar() {
   const theme = useTheme();
@@ -14,14 +16,10 @@ export default function NavigationBar() {
           alignItems: 'center',
         }}
       >
-        <Link
-          href="/"
-          aria-label="Go to home page"
-          underline="none"
-          style={theme.typography.h1}
-        >
+        <Link aria-label="Go to home page" to="/" style={theme.typography.h1} >
           galleria.
         </Link>
+        <SwitchModeButton />
       </Box>
       <Divider />
     </>
