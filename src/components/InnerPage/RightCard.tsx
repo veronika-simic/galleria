@@ -6,17 +6,17 @@ export default function RightCard(props: { data: any }) {
   return (
     <Card
       sx={{
-        alignItems: 'center',
+        alignItems: 'flex-start',
         boxShadow: 'none',
         display: 'flex',
         flexDirection: 'column',
         rowGap: '2rem',
         width: '40%',
-        position: 'relative'
+        position: 'relative',
       }}
       elevation={0}
     >
-      <Typography style={theme.typography.caption} sx={{position: 'absolute', top:0, left: 0}}>{props.data.dating?.sortingDate}</Typography>
+      <Typography  sx={{position: 'absolute', top:0, left: 0, fontSize: '14rem', color: '#7F8487', opacity: 0.2}}>{props.data.dating?.sortingDate}</Typography>
       <CardContent sx={{ width: {xs: '100%', lg: '70%'} }}>
         <Typography style={theme.typography.h5}>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem

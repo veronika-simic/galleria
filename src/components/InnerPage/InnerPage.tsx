@@ -26,7 +26,6 @@ export default function InnerPage() {
         alignItems: 'center',
         rowGap: '1.5rem',
         width: '100%',
-        height: '80vh'
       }}
     >
       <LeftCard data={artifactData} />

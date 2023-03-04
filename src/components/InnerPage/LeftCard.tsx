@@ -1,20 +1,26 @@
-import { Card, CardHeader, CardMedia, Typography, useTheme } from '@mui/material';
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import CardModal from './Modal';
 import { CardActions } from '@mui/material';
 export default function LeftCard(props: { data: any }) {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Card
       sx={{
         boxShadow: 'none',
-        width: {xs: '80%', lg: '40%'},
-        
+        width: { xs: '80%', lg: '40%' },
+        position: 'relative',
       }}
       elevation={0}
     >
       <CardHeader
         title={
-          <Typography gutterBottom style={theme.typography.h5}>
+          <Typography style={theme.typography.h5}>
             {props.data.title}
           </Typography>
         }
@@ -24,13 +30,10 @@ export default function LeftCard(props: { data: any }) {
           </Typography>
         }
       />
-      <CardActions sx={{position: 'relative', padding: 0}}>
+      <CardActions sx={{ padding: 0 }}>
+        <CardMedia src={props.data?.webImage?.url} component="img"></CardMedia>
+
         <CardModal data={props.data?.webImage?.url} />
-        <CardMedia
-          src={props.data?.webImage?.url}
-          component="img"
-          sx={{ objectFit: 'contain' }}
-        ></CardMedia>
       </CardActions>
     </Card>
   );
