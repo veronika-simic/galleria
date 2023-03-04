@@ -10,7 +10,7 @@ export const SwitchModeButton = () => {
   return (
     <>
       <IconButton
-        sx={{position: 'absolute', right: '2.5rem', top: '2.5rem'}}
+        sx={{position: 'absolute', right: '5.5rem', top: '2.5rem'}}
         onClick={colorMode.toggleColorMode}
         color="inherit"
       >
