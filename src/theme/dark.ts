@@ -22,6 +22,7 @@ darkTheme = createTheme(darkTheme, {
       color: darkTheme.palette.primary.dark,
       fontFamily: 'Abril Fatface',
       fontSize: '4rem',
+      textDecoration: 'none',
     },
     h2: {
       color: darkTheme.palette.primary.dark,

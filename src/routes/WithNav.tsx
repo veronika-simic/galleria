@@ -7,7 +7,6 @@ export default () => {
   return (
     <Box sx={{ margin: '0 auto', width: '90%', overflow: 'hidden', height: '100%' }}>
       <NavigationBar />
-      <SwitchModeButton />
       <Box sx={{ display: 'flex', margin: '1rem 0 auto' }} />
       <Outlet />
     </Box>

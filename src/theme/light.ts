@@ -22,6 +22,7 @@ lightTheme = createTheme(lightTheme, {
       color: lightTheme.palette.primary.dark,
       fontFamily: 'Abril Fatface',
       fontSize: '4rem',
+      textDecoration: 'none',
     },
     h2: {
       color: lightTheme.palette.primary.dark,
