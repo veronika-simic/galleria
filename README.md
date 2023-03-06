@@ -2,7 +2,7 @@
 
 This is an online gallery project made with React
 
-> Live demo [_here_](https://www.example.com).
+> Live demo [_here_](https://galleria-weld.vercel.app/).
 
 ## Table of Contents
 
