@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import { useState, useEffect } from 'react';
 import { getData } from '../api/axios';
@@ -18,7 +17,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }} spacing={{ xs: 2 }}>
+    <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }}>
       {data.map((data: ArtifactModel) => (
         <Artifact key={data.objectNumber} data={data} loading={loading} />
       ))}
