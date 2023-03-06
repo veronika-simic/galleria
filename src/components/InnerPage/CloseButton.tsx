@@ -13,3 +13,12 @@ export const CloseButton = styled(Button)<ButtonProps>(({ theme }) => ({
 }));
 
 
+
+
+export default function CloseButtonCustomization(props:{onClick:() => void}){
+  return (
+    <CloseButton onClick={props.onClick}>
+      CLOSE
+    </CloseButton>
+  )
+}

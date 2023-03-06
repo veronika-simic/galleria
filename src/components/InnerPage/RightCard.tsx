@@ -17,7 +17,7 @@ export default function RightCard(props: { data: any }) {
         display: 'flex',
         flexDirection: 'column',
         rowGap: '2rem',
-        width: { xs: '70%', lg: '40%' },
+        width: { xs: '80%', lg: '40%' },
         position: 'relative',
         paddingTop: '12rem',
       }}
