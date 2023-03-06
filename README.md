@@ -8,20 +8,16 @@ This is an online gallery project made with React
 
 - [General Info](#general-information)
 - [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Status](#project-status)
-- [Room for Improvement](#room-for-improvement)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
 ## General Information
 
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
+- Galleria is online museum gallery built with React. It allows users to browse museum artifacts and obtain detailed information about each artifact.
+- The purpose of this project is to make it easier for museum lovers to browse their favorite artifacts and learn something in the process.
 
 ## Technologies Used
 
@@ -29,34 +25,23 @@ This is an online gallery project made with React
 - VITE - version 4.1.1
 - MUI - version 5.11.9
 
-## Features
-
-List the ready features here:
-
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
-
-## Screenshots
-
-![Example screenshot](./img/screenshot.png)
-
 ## Setup
 
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
+1. Make sure you have node installed
+2. Clone the repository by running:
+   `git clone https://github.com/veronika-simic/galleria.git`
+3. Install the packages with:
+   `npm install`
+4. Start the project by running the following command from the root
+   `npm run dev`
 
 ## Usage
 
-Start the project by running the following command from the root
-
-`npm run dev`
+Check out all the artifacts available from the Rijksmuseum Amsterdam
 
 ## Project Status
 
-Project is: _in progress_
-
+Project is: _finished_
 
 ## Contact
 

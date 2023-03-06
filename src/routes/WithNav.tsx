@@ -6,7 +6,7 @@ export default () => {
   return (
     <Box sx={{ margin: '0 auto', width: '90%', overflow: 'hidden' }}>
       <NavigationBar />
-      <Box sx={{ display: 'flex', margin: '1rem 0 auto', width: '100%', height: '100%' }} />
+      <Box sx={{ display: 'flex', margin: '1rem 0 auto'}} />
       <Outlet />
     </Box>
   );
