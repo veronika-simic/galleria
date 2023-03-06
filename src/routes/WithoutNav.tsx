@@ -8,8 +8,9 @@ export default () => {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
-        width: '100%',
+        justifyContent: 'center',
+        width: '100vw',
+        height: '100vh',
         rowGap: '2rem',
       }}
     >
