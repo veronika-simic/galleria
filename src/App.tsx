@@ -17,6 +17,7 @@ import lightTheme from './theme/light';
 import darkTheme from './theme/dark';
 import { ColorContext } from './models/ColorContext';
 import { SwitchModeButton } from './components/SwitchButton/SwitchButton';
+import { useEffect } from 'react';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -32,7 +33,11 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const [mode, setMode] = useState<PaletteMode>('light');
+  const [mode, setMode] = useState<PaletteMode>(() => {
+    const savedMode = localStorage.getItem('themeMode');
+    return savedMode ? (savedMode as PaletteMode) : 'light';
+  });
+
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
@@ -43,6 +48,10 @@ function App() {
     }),
     []
   );
+
+  useEffect(() => {
+    localStorage.setItem('themeMode', mode);
+  }, [mode]);
 
   const theme = useMemo(
     () => createTheme(mode === 'light' ? lightTheme : darkTheme),
