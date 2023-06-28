@@ -11,7 +11,6 @@ This is an online gallery project made with React
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Status](#project-status)
-- [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
 ## General Information
@@ -22,7 +21,7 @@ This is an online gallery project made with React
 ## Technologies Used
 
 - React - version 18.2.0
-- VITE - version 4.1.1
+- Vite - version 4.1.1
 - MUI - version 5.11.9
 
 ## Setup

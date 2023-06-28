@@ -10,7 +10,7 @@ let darkTheme = createTheme({
     },
     secondary: {
       main: '#F8F0DF',
-      light: '#FEFBF3',
+      light: '#191825',
       dark: '#9D9D9D',
     },
   },
@@ -44,7 +44,6 @@ darkTheme = createTheme(darkTheme, {
       fontSize: '1.25rem',
     },
     h6: {
-      color: darkTheme.palette.secondary.light,
       fontFamily: 'Noto Serif',
       fontWeight: 'bold',
     },
