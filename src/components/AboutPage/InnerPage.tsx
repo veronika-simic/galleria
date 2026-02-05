@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import ImageContainer from './ImageContainer';
-import RightCard from './RightCard';
+import Details from './Details';
 import { useGetArtifactDetails } from '../../customHooks/useGetArtifactDetails';
 
 export default function InnerPage() {
@@ -16,7 +16,7 @@ export default function InnerPage() {
       }}
     >
       <ImageContainer {...artifactData} />
-      <RightCard {...artifactData} />
+      <Details {...artifactData} />
     </Box>
   );
 }
