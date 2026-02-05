@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getData } from '../api/axios';
 
 export function useGetData() {
-  const [data, setData] = useState([]);
+  const [artifacts, setArtifacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -10,7 +10,7 @@ export function useGetData() {
     const getAllDataFromApi = async () => {
       try {
         const response = await getData();
-        setData(response);
+        setArtifacts(response);
         setLoading(false);
       } catch (e) {
         setError('Failed to fetch data');
@@ -22,7 +22,7 @@ export function useGetData() {
   }, []);
 
   return {
-    data,
+    artifacts,
     loading,
     error,
   };

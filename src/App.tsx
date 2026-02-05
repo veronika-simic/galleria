@@ -20,7 +20,7 @@ const router = createBrowserRouter(
     <>
       <Route element={<WithNav />}>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/artifacts/:artifactId" element={<InnerPage />} /> */}
+        <Route path="/artifacts/:artifactId" element={<InnerPage />} />
       </Route>
       <Route element={<WithoutNav />}>
         <Route path="*" element={<ErrorPage />} />
