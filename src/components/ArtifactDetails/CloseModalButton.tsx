@@ -1,19 +1,15 @@
 import { styled } from '@mui/material/styles';
-import { Button, ButtonProps } from '@mui/material';
+import { Button } from '@mui/material';
 
-export const CloseModalButton = styled(Button)<ButtonProps>(({ theme }) => ({
+const CloseButton = styled(Button)(({ theme }) => ({
   color: theme.palette.secondary.light,
   fontSize: '1rem',
   position: 'absolute',
   top: '1rem',
   right: '2rem',
-  '&.MuiButtonBase-root:hover': {
-    background: theme.palette.primary.dark,
-  },
+  background: theme.palette.primary.dark,
 }));
 
-export default function CloseButtonCustomization(props: {
-  onClick: () => void;
-}) {
-  return <CloseModalButton onClick={props.onClick}>CLOSE</CloseModalButton>;
+export default function CloseModalButton({ onClick }: { onClick: () => void }) {
+  return <CloseButton onClick={onClick}>CLOSE</CloseButton>;
 }

@@ -6,8 +6,9 @@ import {
   useTheme,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { ArtifactInterface } from '../../types/Artifacts';
 
-function ArtifactInfo({ ...artifactData }) {
+function ArtifactInfo({ artifact }: { artifact: ArtifactInterface }) {
   const theme = useTheme();
   return (
     <Card
@@ -33,7 +34,7 @@ function ArtifactInfo({ ...artifactData }) {
           opacity: 0.2,
         }}
       >
-        {artifactData.date_display.slice(0, 4)}
+        {artifact.date_display?.slice(0, 4)}
       </Typography>
       <CardContent sx={{ width: { xs: '100%', lg: '70%' } }}>
         <Typography style={theme.typography.h5}>
@@ -55,6 +56,7 @@ function ArtifactInfo({ ...artifactData }) {
           }
           target="_blank"
           style={theme.typography.caption}
+          rel="noopener noreferrer"
         >
           GO TO SOURCE
         </Link>

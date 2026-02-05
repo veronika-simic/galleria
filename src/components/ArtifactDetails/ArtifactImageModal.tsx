@@ -1,35 +1,40 @@
 import { Card, CardMedia, Modal } from '@mui/material';
 import { useState } from 'react';
-import CloseButtonCustomization from './CloseModalButton';
-import OpenButtonCustomization from './OpenImageButton';
+import CloseModalButton from './CloseModalButton';
+import OpenImageButton from './OpenImageButton';
 
-function ArtifactImageModal(props: { data: any }) {
+interface Props {
+  imageUrl: string;
+}
+
+export default function ArtifactImageModal({ imageUrl }: Props) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
   return (
     <>
-      <OpenButtonCustomization onClick={handleOpen} />
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Card sx={{ backgroundColor: 'black', opacity: 0.9, width: '100%' }}>
+      <OpenImageButton onClick={() => setOpen(true)} />
+
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Card
+          sx={{
+            backgroundColor: 'black',
+            opacity: 0.95,
+            width: '100%',
+            height: '100vh',
+            position: 'relative',
+          }}
+        >
           <CardMedia
-            src={props.data}
             component="img"
+            src={imageUrl}
             sx={{
-              height: '100vh',
+              height: '100%',
               objectFit: 'contain',
             }}
           />
-          <CloseButtonCustomization onClick={handleClose} />
+          <CloseModalButton onClick={() => setOpen(false)} />
         </Card>
       </Modal>
     </>
   );
 }
-
-export default ArtifactImageModal;

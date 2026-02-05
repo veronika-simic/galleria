@@ -8,9 +8,11 @@ import {
 } from '@mui/material';
 import ArtifactImageModal from './ArtifactImageModal';
 import { getImageUrl } from '../../utils/getImage';
+import { ArtifactInterface } from '../../types/Artifacts';
 
-function ArtifactImage({ ...artifactData }) {
+function ArtifactImage({ artifact }: { artifact: ArtifactInterface }) {
   const theme = useTheme();
+  const imageUrl = getImageUrl(artifact.image_id, 600);
   return (
     <Card
       sx={{
@@ -22,23 +24,17 @@ function ArtifactImage({ ...artifactData }) {
     >
       <CardHeader
         title={
-          <Typography style={theme.typography.h5}>
-            {artifactData.title}
-          </Typography>
+          <Typography style={theme.typography.h5}>{artifact.title}</Typography>
         }
         subheader={
           <Typography style={theme.typography.h6}>
-            {artifactData.artist_title}
+            {artifact.artist_title}
           </Typography>
         }
       />
       <CardActions sx={{ padding: 0 }}>
-        <CardMedia
-          src={getImageUrl(artifactData.image_id, 600)}
-          component="img"
-        ></CardMedia>
-
-        <ArtifactImageModal data={getImageUrl(artifactData.image_id, 600)} />
+        <CardMedia component="img" src={imageUrl} alt={artifact.title} />
+        <ArtifactImageModal imageUrl={imageUrl} />
       </CardActions>
     </Card>
   );
