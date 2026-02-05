@@ -15,7 +15,7 @@ export function useGetData() {
       } catch (e) {
         setError('Failed to fetch data');
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
     getAllDataFromApi();

@@ -8,9 +8,10 @@ export default function HomePage() {
 
   return (
     <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 4 }}>
-      {data.map((data: ArtifactModel) => (
-        <Artifact key={data.id} data={data} loading={loading} />
-      ))}
+      {data?.length > 0 &&
+        data.map((item: ArtifactModel) => (
+          <Artifact key={item.id} data={item} loading={loading} />
+        ))}
     </Masonry>
   );
 }

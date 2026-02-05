@@ -4,6 +4,5 @@ export interface ArtifactModel {
   id: number;
   title: string;
   artist_title: string;
-  longTitle: string;
-  webImage: Image;
+  image_id: string;
 }
