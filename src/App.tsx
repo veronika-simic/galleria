@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import HomePage from './components/HomePage/Home';
-import InnerPage from './components/AboutPage/InnerPage';
+import ArtifactDetailsPage from './components/ArtifactDetails/ArtifactDetailsPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
 import { CssBaseline, PaletteMode, createTheme } from '@mui/material';
@@ -20,7 +20,10 @@ const router = createBrowserRouter(
     <>
       <Route element={<WithNav />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/artifacts/:artifactId" element={<InnerPage />} />
+        <Route
+          path="/artifacts/:artifactId"
+          element={<ArtifactDetailsPage />}
+        />
       </Route>
       <Route element={<WithoutNav />}>
         <Route path="*" element={<ErrorPage />} />

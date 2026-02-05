@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-function Details({ ...artifactData }) {
+function ArtifactInfo({ ...artifactData }) {
   const theme = useTheme();
   return (
     <Card
@@ -63,4 +63,4 @@ function Details({ ...artifactData }) {
   );
 }
 
-export default Details;
+export default ArtifactInfo;

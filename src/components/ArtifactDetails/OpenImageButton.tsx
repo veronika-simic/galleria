@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Button, ButtonProps } from '@mui/material';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 
-export const OpenButton = styled(Button)<ButtonProps>(({ theme }) => ({
+export const OpenImageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   backgroundColor: theme.palette.primary.dark,
   bottom: '1rem',
   color: theme.palette.secondary.light,
@@ -15,11 +15,13 @@ export const OpenButton = styled(Button)<ButtonProps>(({ theme }) => ({
   },
 }));
 
-export default function OpenButtonCustomization(props:{onClick:() => void}) {
+export default function OpenButtonCustomization(props: {
+  onClick: () => void;
+}) {
   return (
-    <OpenButton onClick={props.onClick}>
+    <OpenImageButton onClick={props.onClick}>
       <OpenWithIcon sx={{ height: '1.5rem', marginRight: '0.5rem' }} />
       VIEW IMAGE
-    </OpenButton>
+    </OpenImageButton>
   );
 }

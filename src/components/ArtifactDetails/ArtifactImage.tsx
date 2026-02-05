@@ -6,10 +6,10 @@ import {
   CardActions,
   useTheme,
 } from '@mui/material';
-import CardModal from './Modal';
+import ArtifactImageModal from './ArtifactImageModal';
 import { getImageUrl } from '../../utils/getImage';
 
-function ImageContainer({ ...artifactData }) {
+function ArtifactImage({ ...artifactData }) {
   const theme = useTheme();
   return (
     <Card
@@ -38,10 +38,10 @@ function ImageContainer({ ...artifactData }) {
           component="img"
         ></CardMedia>
 
-        <CardModal data={getImageUrl(artifactData.image_id, 600)} />
+        <ArtifactImageModal data={getImageUrl(artifactData.image_id, 600)} />
       </CardActions>
     </Card>
   );
 }
 
-export default ImageContainer;
+export default ArtifactImage;

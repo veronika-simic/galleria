@@ -1,11 +1,11 @@
 import { Card, CardMedia, Modal } from '@mui/material';
 import { useState } from 'react';
-import CloseButtonCustomization from './CloseButton';
-import OpenButtonCustomization from './OpenButton';
+import CloseButtonCustomization from './CloseModalButton';
+import OpenButtonCustomization from './OpenImageButton';
 
-export default function CardModal(props: { data: any }) {
+function ArtifactImageModal(props: { data: any }) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true)
+  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <>
@@ -25,9 +25,11 @@ export default function CardModal(props: { data: any }) {
               objectFit: 'contain',
             }}
           />
-          <CloseButtonCustomization onClick={handleClose}/>
+          <CloseButtonCustomization onClick={handleClose} />
         </Card>
       </Modal>
     </>
   );
 }
+
+export default ArtifactImageModal;

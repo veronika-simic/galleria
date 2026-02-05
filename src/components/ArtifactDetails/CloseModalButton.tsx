@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Button, ButtonProps } from '@mui/material';
 
-export const CloseButton = styled(Button)<ButtonProps>(({ theme }) => ({
+export const CloseModalButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.secondary.light,
   fontSize: '1rem',
   position: 'absolute',
@@ -15,5 +15,5 @@ export const CloseButton = styled(Button)<ButtonProps>(({ theme }) => ({
 export default function CloseButtonCustomization(props: {
   onClick: () => void;
 }) {
-  return <CloseButton onClick={props.onClick}>CLOSE</CloseButton>;
+  return <CloseModalButton onClick={props.onClick}>CLOSE</CloseModalButton>;
 }
