@@ -7,7 +7,7 @@ import {
 import { ThemeProvider } from '@mui/material/styles';
 import HomePage from './pages/HomePage/HomePage';
 import ArtifactDetailsPage from './components/ArtifactDetails/ArtifactDetailsPage';
-import ErrorPage from './components/ErrorPage/ErrorPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
 import { CssBaseline, PaletteMode, createTheme } from '@mui/material';
 import WithoutNav from './routes/WithoutNav';
