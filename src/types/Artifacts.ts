@@ -5,8 +5,3 @@ export interface ArtifactInterface {
   image_id: string;
   date_display: string;
 }
-
-export type ArtifactProps = {
-  artifact: ArtifactInterface;
-  loading: boolean;
-};

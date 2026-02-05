@@ -5,7 +5,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import HomePage from './components/HomePage/Home';
+import HomePage from './pages/HomePage/HomePage';
 import ArtifactDetailsPage from './components/ArtifactDetails/ArtifactDetailsPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';

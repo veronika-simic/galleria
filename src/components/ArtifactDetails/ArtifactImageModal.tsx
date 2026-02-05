@@ -3,11 +3,7 @@ import { useState } from 'react';
 import CloseModalButton from './CloseModalButton';
 import OpenImageButton from './OpenImageButton';
 
-interface Props {
-  imageUrl: string;
-}
-
-export default function ArtifactImageModal({ imageUrl }: Props) {
+export default function ArtifactImageModal({ imageUrl }: { imageUrl: string }) {
   const [open, setOpen] = useState(false);
 
   return (
