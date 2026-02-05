@@ -1,6 +1,5 @@
 import {
   createBrowserRouter,
-  Routes,
   Route,
   RouterProvider,
   createRoutesFromElements,
@@ -15,14 +14,13 @@ import WithoutNav from './routes/WithoutNav';
 import { useMemo, useState } from 'react';
 import lightTheme from './theme/light';
 import darkTheme from './theme/dark';
-import { ColorContext } from './models/ColorContext';
-import { SwitchModeButton } from './components/SwitchButton/SwitchButton';
+import { ColorContext } from './types/ColorContext';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<WithNav />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/artifacts/:artifactId" element={<InnerPage />} />
+        {/* <Route path="/artifacts/:artifactId" element={<InnerPage />} /> */}
       </Route>
       <Route element={<WithoutNav />}>
         <Route path="*" element={<ErrorPage />} />

@@ -1,4 +1,4 @@
-import { ArtifactModel } from '../../models/Artifacts';
+import { ArtifactModel } from '../../types/Artifacts';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
@@ -11,12 +11,12 @@ export default function Artifact(props: {
   loading: boolean;
 }) {
   const [onHover, setOnHover] = useState({ raised: false, shadow: 1 });
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <>
       {props.loading ? (
         <Skeleton variant="rectangular" color={theme.palette.secondary.main}>
-          <ImageFile data={props.data} />
+          {/* <ImageFile data={props.data} /> */}
         </Skeleton>
       ) : (
         <Link to={`artifacts/` + props.data.objectNumber}>
@@ -26,7 +26,7 @@ export default function Artifact(props: {
             raised={onHover.raised}
           >
             <Box sx={{ position: 'relative' }}>
-              <ImageFile data={props.data} />
+              {/* <ImageFile data={props.data} /> */}
               <Box
                 sx={{
                   position: 'absolute',

@@ -1,4 +1,4 @@
-import { getDataById } from '../api/axios';
+import { getDataById } from '../../api/axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
@@ -21,7 +21,7 @@ export default function InnerPage() {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: {xs: 'column', lg: 'row'},
+        flexDirection: { xs: 'column', lg: 'row' },
         justifyContent: 'space-evenly',
         alignItems: 'center',
         rowGap: '1.5rem',

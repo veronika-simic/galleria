@@ -1,9 +1,9 @@
 import { Image } from './Image';
 
 export interface ArtifactModel {
-  objectNumber: string;
+  id: number;
   title: string;
-  principalOrFirstMaker: string;
+  artist_title: string;
   longTitle: string;
   webImage: Image;
 }

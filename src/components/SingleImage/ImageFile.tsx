@@ -1,5 +1,5 @@
 import CardMedia from '@mui/material/CardMedia';
-import { ArtifactModel } from '../../models/Artifacts';
+import { ArtifactModel } from '../../types/Artifacts';
 
 export default function ImageFile(props: { data: ArtifactModel }) {
   return (
