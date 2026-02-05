@@ -1,5 +1,5 @@
 import Masonry from '@mui/lab/Masonry';
-import Artifact from '../SingleImage/Artifact';
+import Artifact from './Artifact';
 import { ArtifactInterface } from '../../types/Artifacts';
 import { useGetData } from '../../customHooks/useGetData';
 

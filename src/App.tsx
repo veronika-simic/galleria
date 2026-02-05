@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import HomePage from './components/HomePage/Home';
-import InnerPage from './components/InnerPage/InnerPage';
+import InnerPage from './components/AboutPage/InnerPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import WithNav from './routes/WithNav';
 import { CssBaseline, PaletteMode, createTheme } from '@mui/material';
