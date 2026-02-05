@@ -1,10 +1,13 @@
 import { getDataById } from '../api/axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { ArtifactInterface } from '../types/Artifacts';
 
 export function useGetArtifactDetails() {
   const { artifactId } = useParams();
-  const [artifactData, setArtifactData] = useState([]);
+  const [artifactData, setArtifactData] = useState<ArtifactInterface | null>(
+    null
+  );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
