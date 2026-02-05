@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { useGetArtifactDetails } from '../../customHooks/useGetArtifactDetails';
-import ArtifactImage from './ArtifactImage';
-import ArtifactInfo from './ArtifactInfo';
+import ArtifactImage from '../../components/ArtifactDetails/ArtifactImage';
+import ArtifactInfo from '../../components/ArtifactDetails/ArtifactInfo';
 
 function ArtifactDetailsPage() {
   const { artifactData, loading, error } = useGetArtifactDetails();

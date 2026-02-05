@@ -1,46 +1,35 @@
 import {
   createBrowserRouter,
+  createRoutesFromElements,
   Route,
   RouterProvider,
-  createRoutesFromElements,
 } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
-import HomePage from './pages/HomePage/HomePage';
-import ArtifactDetailsPage from './components/ArtifactDetails/ArtifactDetailsPage';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
-import WithNav from './routes/WithNav';
-import { CssBaseline, PaletteMode, createTheme } from '@mui/material';
-import WithoutNav from './routes/WithoutNav';
+import {
+  CssBaseline,
+  PaletteMode,
+  ThemeProvider,
+  createTheme,
+} from '@mui/material';
 import { useMemo, useState } from 'react';
+
+import HomePage from './pages/HomePage/HomePage';
+import ArtifactDetailsPage from './pages/ArtifactDetailsPage/ArtifactDetailsPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+
+import MainLayout from './layouts/MainLayout';
+import CenteredLayout from './layouts/CenteredLayout';
+
 import lightTheme from './theme/light';
 import darkTheme from './theme/dark';
 import { ColorContext } from './types/ColorContext';
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route element={<WithNav />}>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/artifacts/:artifactId"
-          element={<ArtifactDetailsPage />}
-        />
-      </Route>
-      <Route element={<WithoutNav />}>
-        <Route path="*" element={<ErrorPage />} />
-      </Route>
-    </>
-  )
-);
 
-function App() {
+export default function App() {
   const [mode, setMode] = useState<PaletteMode>('light');
+
   const colorMode = useMemo(
     () => ({
-      toggleColorMode: () => {
-        setMode((prevMode: PaletteMode) =>
-          prevMode === 'light' ? 'dark' : 'light'
-        );
-      },
+      toggleColorMode: () =>
+        setMode((prev) => (prev === 'light' ? 'dark' : 'light')),
     }),
     []
   );
@@ -49,6 +38,29 @@ function App() {
     () => createTheme(mode === 'light' ? lightTheme : darkTheme),
     [mode]
   );
+
+  const router = useMemo(
+    () =>
+      createBrowserRouter(
+        createRoutesFromElements(
+          <>
+            <Route element={<MainLayout />}>
+              <Route index element={<HomePage />} />
+              <Route
+                path="artifacts/:artifactId"
+                element={<ArtifactDetailsPage />}
+              />
+            </Route>
+
+            <Route element={<CenteredLayout />}>
+              <Route path="*" element={<ErrorPage />} />
+            </Route>
+          </>
+        )
+      ),
+    []
+  );
+
   return (
     <ColorContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
@@ -58,5 +70,3 @@ function App() {
     </ColorContext.Provider>
   );
 }
-
-export default App;
