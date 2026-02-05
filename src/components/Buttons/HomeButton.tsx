@@ -14,10 +14,15 @@ const HomeButton = styled(Button)<ButtonProps>(({ theme }) => ({
 }));
 
 export default function HomeButtonCustomization() {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <HomeButton>
-      <Link to="/" style={{color: theme.palette.secondary.light, textDecoration: 'none'}}>Home Page</Link>
+      <Link
+        to="/"
+        style={{ color: theme.palette.secondary.light, textDecoration: 'none' }}
+      >
+        Home Page
+      </Link>
     </HomeButton>
   );
 }

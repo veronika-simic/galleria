@@ -6,8 +6,9 @@ import {
   useTheme,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { ArtifactInterface } from '../../types/Artifacts';
 
-export default function RightCard(props: { data: any }) {
+function ArtifactInfo({ artifact }: { artifact: ArtifactInterface }) {
   const theme = useTheme();
   return (
     <Card
@@ -33,7 +34,7 @@ export default function RightCard(props: { data: any }) {
           opacity: 0.2,
         }}
       >
-        {props.data.dating?.sortingDate}
+        {artifact.date_display?.slice(0, 4)}
       </Typography>
       <CardContent sx={{ width: { xs: '100%', lg: '70%' } }}>
         <Typography style={theme.typography.h5}>
@@ -55,6 +56,7 @@ export default function RightCard(props: { data: any }) {
           }
           target="_blank"
           style={theme.typography.caption}
+          rel="noopener noreferrer"
         >
           GO TO SOURCE
         </Link>
@@ -62,3 +64,5 @@ export default function RightCard(props: { data: any }) {
     </Card>
   );
 }
+
+export default ArtifactInfo;

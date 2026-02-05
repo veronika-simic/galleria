@@ -1,20 +1,19 @@
 import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
-export default () => {
+export default function CenteredLayout() {
   return (
     <Box
       sx={{
-        alignItems: 'center',
+        minHeight: '100vh',
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
-        width: '100vw',
-        height: '100vh',
-        rowGap: '2rem',
+        alignItems: 'center',
+        flexDirection: 'column',
+        px: 2,
       }}
     >
-      <Outlet />;
+      <Outlet />
     </Box>
   );
-};
+}
