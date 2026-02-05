@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export default function RightCard(props: { data: any }) {
+export default function RightCard({ ...artifactData }) {
   const theme = useTheme();
   return (
     <Card
@@ -33,7 +33,7 @@ export default function RightCard(props: { data: any }) {
           opacity: 0.2,
         }}
       >
-        {props.data.dating?.sortingDate}
+        {artifactData.title}
       </Typography>
       <CardContent sx={{ width: { xs: '100%', lg: '70%' } }}>
         <Typography style={theme.typography.h5}>

@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import LeftCard from './LeftCard';
+import ImageContainer from './ImageContainer';
 import RightCard from './RightCard';
 import { useGetArtifactDetails } from '../../customHooks/useGetArtifactDetails';
 
@@ -15,8 +15,8 @@ export default function InnerPage() {
         rowGap: '1.5rem',
       }}
     >
-      <LeftCard data={artifactData} />
-      <RightCard data={artifactData} />
+      <ImageContainer {...artifactData} />
+      <RightCard {...artifactData} />
     </Box>
   );
 }

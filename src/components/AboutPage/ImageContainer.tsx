@@ -3,11 +3,13 @@ import {
   CardHeader,
   CardMedia,
   Typography,
+  CardActions,
   useTheme,
 } from '@mui/material';
 import CardModal from './Modal';
-import { CardActions } from '@mui/material';
-export default function LeftCard(props: { data: any }) {
+import { getImageUrl } from '../../utils/getImage';
+
+function ImageContainer({ ...artifactData }) {
   const theme = useTheme();
   return (
     <Card
@@ -21,20 +23,25 @@ export default function LeftCard(props: { data: any }) {
       <CardHeader
         title={
           <Typography style={theme.typography.h5}>
-            {props.data.title}
+            {artifactData.title}
           </Typography>
         }
         subheader={
           <Typography style={theme.typography.h6}>
-            {props.data.principalMaker}
+            {artifactData.artist_title}
           </Typography>
         }
       />
       <CardActions sx={{ padding: 0 }}>
-        <CardMedia src={props.data?.webImage?.url} component="img"></CardMedia>
+        <CardMedia
+          src={getImageUrl(artifactData.image_id, 600)}
+          component="img"
+        ></CardMedia>
 
-        <CardModal data={props.data?.webImage?.url} />
+        <CardModal data={getImageUrl(artifactData.image_id, 600)} />
       </CardActions>
     </Card>
   );
 }
+
+export default ImageContainer;
