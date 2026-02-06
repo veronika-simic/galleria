@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { ArtifactInterface } from '../types/Artifacts';
+import { getImageUrl } from '../utils/getImage';
 
 const BASE = 'https://api.artic.edu/api/v1/artworks';
 
@@ -9,14 +10,38 @@ export async function getDataById(id: string | undefined) {
   return response.data.data;
 }
 
+async function imageExists(url: string): Promise<boolean> {
+  try {
+    await axios.head(url);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export async function getData(limit = 100): Promise<ArtifactInterface[]> {
-  const response = await axios.get(`${BASE}?page=1&limit=${limit}`);
+  let page = 1;
+  const valid: ArtifactInterface[] = [];
 
-  const filtered = response.data.data.filter(
-    (artifact: ArtifactInterface) =>
-      typeof artifact.image_id === 'string' &&
-      artifact.image_id.trim().length > 0
-  );
+  while (valid.length < limit) {
+    const response = await axios.get(`${BASE}?page=${page}&limit=100`);
 
-  return filtered.slice(0, limit);
+    const candidates = response.data.data.filter(
+      (a: ArtifactInterface) => a.image_id
+    );
+
+    for (const artifact of candidates) {
+      const imageUrl = getImageUrl(artifact.image_id, 600);
+
+      if (await imageExists(imageUrl)) {
+        valid.push(artifact);
+      }
+
+      if (valid.length >= limit) break;
+    }
+
+    page++;
+  }
+
+  return valid.slice(0, limit);
 }
