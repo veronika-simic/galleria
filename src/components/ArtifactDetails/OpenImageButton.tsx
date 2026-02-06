@@ -4,7 +4,7 @@ import OpenWithIcon from '@mui/icons-material/OpenWith';
 
 const OpenButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.dark,
-  bottom: '1rem',
+  bottom: '3rem',
   left: '1rem',
   opacity: 0.85,
   padding: '0.7rem 1.4rem',

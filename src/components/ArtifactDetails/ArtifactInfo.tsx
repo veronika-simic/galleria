@@ -51,9 +51,7 @@ function ArtifactInfo({ artifact }: { artifact: ArtifactInterface }) {
       </CardContent>
       <CardActions sx={{ alignSelf: { xs: 'center', lg: 'inherit' } }}>
         <Link
-          to={
-            'https://www.rijksmuseum.nl/en/rijksstudio?ii=0&p=0&from=2023-02-28T08%3A49%3A26.6408842Z'
-          }
+          to={'https://www.artic.edu/'}
           target="_blank"
           style={theme.typography.caption}
           rel="noopener noreferrer"
