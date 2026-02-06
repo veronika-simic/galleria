@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { getData } from '../api/axios';
+import { ArtifactInterface } from '../types/Artifacts';
 
 export function useGetData() {
-  const [artifacts, setArtifacts] = useState([]);
+  const [artifacts, setArtifacts] = useState<ArtifactInterface[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 

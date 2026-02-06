@@ -36,7 +36,7 @@ This is an online gallery project made with React
 
 ## Usage
 
-Check out all the artifacts available from the Rijksmuseum Amsterdam
+Check out all the artifacts available from the Chicago museum
 
 ## Project Status
 
