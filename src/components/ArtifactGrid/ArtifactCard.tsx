@@ -3,23 +3,18 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import ArtifactCaption from './ArtifactCaption';
 import { Link } from 'react-router-dom';
-import { Skeleton, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import { getImageUrl } from '../../utils/getImage';
 import CardMedia from '@mui/material/CardMedia';
 import { ArtifactInterface } from '../../types/Artifacts';
 
-interface Props {
+export default function ArtifactCard({
+  artifact,
+}: {
   artifact: ArtifactInterface;
-  loading: boolean;
-}
-
-export default function ArtifactCard({ artifact, loading }: Props) {
+}) {
   const [raised, setRaised] = useState(false);
   const theme = useTheme();
-
-  if (loading) {
-    return <Skeleton variant="rectangular" height={300} animation="wave" />;
-  }
 
   return (
     <Link to={`/artifacts/${artifact.id}`}>
